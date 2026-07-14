@@ -16,7 +16,6 @@ let settings = JSON.parse(localStorage.getItem("dreamwalkerSettings")) || {
 };
 
 
-
 function saveSettings(){
 
     localStorage.setItem(
@@ -46,37 +45,37 @@ Dreamwalker
 <div class="menu-buttons">
 
 
-<button onclick="newGame()">
+<button type="button" onclick="newGame()">
 Нова гра
 </button>
 
 
-<button onclick="continueGame()">
+<button type="button" onclick="continueGame()">
 Продовжити
 </button>
 
 
-<button onclick="showChapters()">
+<button type="button" onclick="showChapters()">
 Розділи
 </button>
 
 
-<button onclick="showSaves()">
+<button type="button" onclick="showSaves()">
 Збереження
 </button>
 
 
-<button onclick="showSettings()">
+<button type="button" onclick="showSettings()">
 Налаштування
 </button>
 
 
-<button onclick="showGallery()">
+<button type="button" onclick="showGallery()">
 Галерея
 </button>
 
 
-<button onclick="showAbout()">
+<button type="button" onclick="showAbout()">
 Про гру
 </button>
 
@@ -98,7 +97,7 @@ Dreamwalker
 
 function newGame(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
 
@@ -109,13 +108,12 @@ app.innerHTML=`
 
 <div class="menu-buttons">
 
-
 <p>
 Початок історії Dreamwalker
 </p>
 
 
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
 
@@ -137,7 +135,7 @@ app.innerHTML=`
 
 function continueGame(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
 
@@ -148,13 +146,12 @@ app.innerHTML=`
 
 <div class="menu-buttons">
 
-
 <p>
 Збережень поки немає
 </p>
 
 
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
 
@@ -176,7 +173,8 @@ app.innerHTML=`
 
 function showChapters(){
 
-app.innerHTML=`
+
+app.innerHTML = `
 
 <div class="menu">
 
@@ -204,8 +202,12 @@ app.innerHTML=`
 </p>
 
 
-<button onclick="newGame()">
-Почати
+<button 
+type="button"
+onclick="newGame()">
+
+▶ Почати
+
 </button>
 
 
@@ -216,7 +218,6 @@ app.innerHTML=`
 
 
 <div class="chapter-card locked">
-
 
 <h2>
 🔒 Розділ 1
@@ -236,7 +237,6 @@ app.innerHTML=`
 
 <div class="chapter-card locked">
 
-
 <h2>
 🔒 Розділ 2
 </h2>
@@ -255,7 +255,6 @@ app.innerHTML=`
 
 <div class="chapter-card locked">
 
-
 <h2>
 🔒 Розділ 3
 </h2>
@@ -271,8 +270,9 @@ app.innerHTML=`
 
 
 
-
-<button class="back-button" onclick="showMenu()">
+<button 
+type="button"
+onclick="showMenu()">
 
 ← Назад
 
@@ -309,18 +309,18 @@ app.innerHTML=`
 
 <div class="menu-buttons">
 
-
 <p>
 Слотів поки немає
 </p>
 
 
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
 
 
 </div>
+
 
 </div>
 
@@ -330,16 +330,16 @@ app.innerHTML=`
 
 
 
-
 // =========================
 // НАЛАШТУВАННЯ
 // =========================
 
 function showSettings(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
+
 
 <h1 class="logo">
 Налаштування
@@ -349,94 +349,45 @@ app.innerHTML=`
 <div class="settings-panel">
 
 
-<div class="setting">
-
 <label id="musicValue">
 🎵 Музика: ${settings.music}%
 </label>
 
+
 <input id="music" type="range" min="0" max="100" value="${settings.music}">
 
-</div>
 
-
-
-<div class="setting">
 
 <label id="soundValue">
 🔊 Звуки: ${settings.sound}%
 </label>
 
+
 <input id="sound" type="range" min="0" max="100" value="${settings.sound}">
 
-</div>
 
-
-
-<div class="setting">
 
 <label id="textValue">
 💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
+
 <input id="textSpeed" type="range" min="1" max="10" value="${settings.textSpeed}">
 
-</div>
 
 
-
-<div class="setting">
-
-<label>
-🌐 Мова
-</label>
-
-<select id="language">
-
-<option>
-Українська
-</option>
-
-<option>
-English
-</option>
-
-</select>
-
-</div>
-
-
-
-<div class="setting">
-
-<label>
-
-<input id="autosave" type="checkbox" ${settings.autosave ? "checked":""}>
-
-Автозбереження
-
-</label>
-
-</div>
-
-
-
-<button onclick="applySettings()">
+<button type="button" onclick="applySettings()">
 Зберегти
 </button>
 
 
-<button onclick="resetSettings()">
-Скинути
-</button>
-
-
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
 
 
 </div>
+
 
 </div>
 
@@ -467,6 +418,7 @@ document.getElementById("textValue").innerHTML =
 
 };
 
+
 }
 
 
@@ -474,13 +426,20 @@ document.getElementById("textValue").innerHTML =
 
 function applySettings(){
 
-settings.music=Number(document.getElementById("music").value);
-settings.sound=Number(document.getElementById("sound").value);
-settings.textSpeed=Number(document.getElementById("textSpeed").value);
-settings.language=document.getElementById("language").value;
-settings.autosave=document.getElementById("autosave").checked;
+settings.music =
+Number(document.getElementById("music").value);
+
+
+settings.sound =
+Number(document.getElementById("sound").value);
+
+
+settings.textSpeed =
+Number(document.getElementById("textSpeed").value);
+
 
 saveSettings();
+
 
 showMenu();
 
@@ -489,34 +448,13 @@ showMenu();
 
 
 
-function resetSettings(){
-
-settings={
-
-music:70,
-sound:80,
-textSpeed:5,
-language:"Українська",
-autosave:true
-
-};
-
-saveSettings();
-
-showSettings();
-
-}
-
-
-
-
 // =========================
-// ГАЛЕРЕЯ
+// ІНШІ МЕНЮ
 // =========================
 
 function showGallery(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
 
@@ -524,20 +462,9 @@ app.innerHTML=`
 Галерея
 </h1>
 
-
-<div class="menu-buttons">
-
-<p>
-Відкривається під час проходження
-</p>
-
-
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
-
-
-</div>
 
 </div>
 
@@ -547,14 +474,9 @@ app.innerHTML=`
 
 
 
-
-// =========================
-// ПРО ГРУ
-// =========================
-
 function showAbout(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
 
@@ -563,26 +485,23 @@ Dreamwalker
 </h1>
 
 
-<div class="menu-buttons">
-
 <p>
 Візуальна новела про мрії,
 страхи та шлях до мети.
 </p>
 
 
-<button class="back-button" onclick="showMenu()">
+<button type="button" onclick="showMenu()">
 ← Назад
 </button>
 
 
 </div>
 
-</div>
-
 `;
 
 }
+
 
 
 

@@ -60,9 +60,9 @@ Dreamwalker
 
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -97,9 +97,9 @@ app.innerHTML = `
 </div>
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -133,6 +133,7 @@ app.innerHTML = `
 
 </div>
 
+</div>
 </div>
 
 `;
@@ -181,9 +182,9 @@ app.innerHTML = `
 </div>
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -228,9 +229,9 @@ app.innerHTML = `
 </div>
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -275,9 +276,9 @@ app.innerHTML = `
 </div>
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -312,9 +313,9 @@ app.innerHTML = `
 </div>
 
 </div>
+</div>
 
 `;
-
 }
 
 
@@ -349,6 +350,7 @@ Dreamwalker — це візуальна новела
 
 </div>
 
+</div>
 </div>
 
 `;

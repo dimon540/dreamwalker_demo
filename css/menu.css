@@ -18,33 +18,39 @@
 }
 
 
-/* Великий логотип позаду меню */
+/* Логотип Dreamwalker на задньому фоні */
 
 .logo {
 
     position:absolute;
 
-    top:50%;
+    top:45%;
     left:50%;
 
     transform:translate(-50%, -50%);
 
-    font-size:50px;
+    font-size:140px;
 
-    color:red;
+    color:white;
 
-    opacity:1;
+    opacity:0.15;
 
-    letter-spacing:0;
+    letter-spacing:15px;
 
     white-space:nowrap;
 
     z-index:1;
 
+    user-select:none;
+
+    text-shadow:
+    0 0 20px white,
+    0 0 40px #777;
+
 }
 
 
-/* Кнопки */
+/* Блок кнопок */
 
 .menu-buttons {
 
@@ -56,10 +62,12 @@
 
     z-index:2;
 
+    transform:translateY(20px);
+
 }
 
 
-/* Стиль кнопок */
+/* Кнопки */
 
 .menu-buttons button {
 
@@ -84,7 +92,7 @@
 }
 
 
-/* Ефект при наведенні */
+/* Наведення */
 
 .menu-buttons button:hover {
 
@@ -94,7 +102,4 @@
 
     transform:scale(1.08);
 
-}
-body {
-    background:red !important;
 }

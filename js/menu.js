@@ -91,13 +91,14 @@ Dreamwalker
 
 
 
+
 // =========================
 // НОВА ГРА
 // =========================
 
 function newGame(){
 
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -108,13 +109,14 @@ app.innerHTML = `
 
 <div class="menu-buttons">
 
+
 <p>
 Початок історії Dreamwalker
 </p>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
@@ -128,13 +130,14 @@ app.innerHTML = `
 
 
 
+
 // =========================
 // ПРОДОВЖИТИ
 // =========================
 
 function continueGame(){
 
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -145,13 +148,14 @@ app.innerHTML = `
 
 <div class="menu-buttons">
 
+
 <p>
 Збережень поки немає
 </p>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
@@ -165,13 +169,14 @@ app.innerHTML = `
 
 
 
+
 // =========================
 // РОЗДІЛИ
 // =========================
 
 function showChapters(){
 
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -266,9 +271,10 @@ app.innerHTML = `
 
 
 
-<button onclick="showMenu()">
 
-Назад
+<button class="back-button" onclick="showMenu()">
+
+← Назад
 
 </button>
 
@@ -285,13 +291,14 @@ app.innerHTML = `
 
 
 
+
 // =========================
 // ЗБЕРЕЖЕННЯ
 // =========================
 
 function showSaves(){
 
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -308,13 +315,12 @@ app.innerHTML = `
 </p>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
 </div>
-
 
 </div>
 
@@ -324,13 +330,14 @@ app.innerHTML = `
 
 
 
+
 // =========================
 // НАЛАШТУВАННЯ
 // =========================
 
 function showSettings(){
 
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -339,9 +346,7 @@ app.innerHTML = `
 </h1>
 
 
-
 <div class="settings-panel">
-
 
 
 <div class="setting">
@@ -350,13 +355,7 @@ app.innerHTML = `
 🎵 Музика: ${settings.music}%
 </label>
 
-<input 
-id="music"
-type="range"
-min="0"
-max="100"
-value="${settings.music}"
->
+<input id="music" type="range" min="0" max="100" value="${settings.music}">
 
 </div>
 
@@ -368,13 +367,7 @@ value="${settings.music}"
 🔊 Звуки: ${settings.sound}%
 </label>
 
-<input 
-id="sound"
-type="range"
-min="0"
-max="100"
-value="${settings.sound}"
->
+<input id="sound" type="range" min="0" max="100" value="${settings.sound}">
 
 </div>
 
@@ -386,13 +379,7 @@ value="${settings.sound}"
 💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
-<input 
-id="textSpeed"
-type="range"
-min="1"
-max="10"
-value="${settings.textSpeed}"
->
+<input id="textSpeed" type="range" min="1" max="10" value="${settings.textSpeed}">
 
 </div>
 
@@ -404,18 +391,15 @@ value="${settings.textSpeed}"
 🌐 Мова
 </label>
 
-
 <select id="language">
 
-<option ${settings.language==="Українська" ? "selected":""}>
+<option>
 Українська
 </option>
 
-
-<option ${settings.language==="English" ? "selected":""}>
+<option>
 English
 </option>
-
 
 </select>
 
@@ -427,11 +411,7 @@ English
 
 <label>
 
-<input 
-id="autosave"
-type="checkbox"
-${settings.autosave ? "checked":""}
->
+<input id="autosave" type="checkbox" ${settings.autosave ? "checked":""}>
 
 Автозбереження
 
@@ -451,13 +431,12 @@ ${settings.autosave ? "checked":""}
 </button>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
 </div>
-
 
 </div>
 
@@ -473,14 +452,12 @@ document.getElementById("musicValue").innerHTML =
 };
 
 
-
 document.getElementById("sound").oninput=function(){
 
 document.getElementById("soundValue").innerHTML =
 "🔊 Звуки: "+this.value+"%";
 
 };
-
 
 
 document.getElementById("textSpeed").oninput=function(){
@@ -490,39 +467,20 @@ document.getElementById("textValue").innerHTML =
 
 };
 
-
 }
 
 
 
-// =========================
-// ЗБЕРЕГТИ НАЛАШТУВАННЯ
-// =========================
 
 function applySettings(){
 
-settings.music =
-Number(document.getElementById("music").value);
-
-
-settings.sound =
-Number(document.getElementById("sound").value);
-
-
-settings.textSpeed =
-Number(document.getElementById("textSpeed").value);
-
-
-settings.language =
-document.getElementById("language").value;
-
-
-settings.autosave =
-document.getElementById("autosave").checked;
-
+settings.music=Number(document.getElementById("music").value);
+settings.sound=Number(document.getElementById("sound").value);
+settings.textSpeed=Number(document.getElementById("textSpeed").value);
+settings.language=document.getElementById("language").value;
+settings.autosave=document.getElementById("autosave").checked;
 
 saveSettings();
-
 
 showMenu();
 
@@ -530,9 +488,6 @@ showMenu();
 
 
 
-// =========================
-// СКИНУТИ
-// =========================
 
 function resetSettings(){
 
@@ -546,12 +501,12 @@ autosave:true
 
 };
 
-
 saveSettings();
 
 showSettings();
 
 }
+
 
 
 
@@ -577,8 +532,8 @@ app.innerHTML=`
 </p>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
@@ -589,6 +544,7 @@ app.innerHTML=`
 `;
 
 }
+
 
 
 
@@ -615,8 +571,8 @@ Dreamwalker
 </p>
 
 
-<button onclick="showMenu()">
-Назад
+<button class="back-button" onclick="showMenu()">
+← Назад
 </button>
 
 
@@ -629,7 +585,5 @@ Dreamwalker
 }
 
 
-
-// запуск
 
 showMenu();

@@ -6,7 +6,6 @@ const app = document.getElementById("app");
 function showMenu() {
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
 
@@ -55,24 +54,22 @@ Dreamwalker
 </button>
 
 
-
 </div>
 
 
-</div>
 </div>
 
 `;
+
 }
 
 
 
 // НОВА ГРА
 
-function newGame() {
+function newGame(){
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
 
@@ -84,7 +81,7 @@ app.innerHTML = `
 <div class="menu-buttons">
 
 
-<p style="color:white;">
+<p>
 Початок історії Dreamwalker
 </p>
 
@@ -96,20 +93,20 @@ app.innerHTML = `
 
 </div>
 
-</div>
+
 </div>
 
 `;
+
 }
 
 
 
 // ПРОДОВЖИТИ
 
-function continueGame() {
+function continueGame(){
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
 
@@ -121,7 +118,7 @@ app.innerHTML = `
 <div class="menu-buttons">
 
 
-<p style="color:white;">
+<p>
 Збережень поки немає
 </p>
 
@@ -133,7 +130,7 @@ app.innerHTML = `
 
 </div>
 
-</div>
+
 </div>
 
 `;
@@ -144,10 +141,9 @@ app.innerHTML = `
 
 // РОЗДІЛИ
 
-function showChapters() {
+function showChapters(){
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
 
@@ -181,20 +177,20 @@ app.innerHTML = `
 
 </div>
 
-</div>
+
 </div>
 
 `;
+
 }
 
 
 
 // ЗБЕРЕЖЕННЯ
 
-function showSaves() {
+function showSaves(){
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
 
@@ -228,17 +224,18 @@ app.innerHTML = `
 
 </div>
 
-</div>
+
 </div>
 
 `;
+
 }
 
 
 
 // НАЛАШТУВАННЯ
 
-function showSettings() {
+function showSettings(){
 
 app.innerHTML = `
 
@@ -257,15 +254,10 @@ app.innerHTML = `
 <div class="setting">
 
 <label>
-🎵 Гучність музики
+🎵 Музика
 </label>
 
-<input 
-type="range"
-min="0"
-max="100"
-value="70"
->
+<input type="range" value="70">
 
 </div>
 
@@ -274,15 +266,10 @@ value="70"
 <div class="setting">
 
 <label>
-🔊 Гучність ефектів
+🔊 Звуки
 </label>
 
-<input 
-type="range"
-min="0"
-max="100"
-value="80"
->
+<input type="range" value="80">
 
 </div>
 
@@ -294,20 +281,13 @@ value="80"
 💬 Швидкість тексту
 </label>
 
-<input 
-type="range"
-min="1"
-max="10"
-value="5"
->
+<input type="range" value="50">
 
 </div>
 
 
 
-
 <div class="setting">
-
 
 <label>
 🌐 Мова
@@ -324,6 +304,7 @@ value="5"
 English
 </option>
 
+
 </select>
 
 
@@ -331,9 +312,7 @@ English
 
 
 
-
-<div class="setting checkbox">
-
+<div class="setting">
 
 <label>
 
@@ -348,22 +327,6 @@ English
 
 
 
-<div class="setting checkbox">
-
-
-<label>
-
-<input type="checkbox" checked>
-
-Ефекти переходів
-
-</label>
-
-
-</div>
-
-
-
 
 <button onclick="showMenu()">
 
@@ -380,70 +343,30 @@ English
 
 `;
 
-}
-
-app.innerHTML = `
-<div class="screen">
-
-<div class="menu">
-
-<h1 class="logo">
-Налаштування
-</h1>
-
-
-<div class="menu-buttons">
-
-
-<button>
-Гучність музики
-</button>
-
-
-<button>
-Гучність звуків
-</button>
-
-
-<button>
-Мова
-</button>
-
-
-<button onclick="showMenu()">
-Назад
-</button>
-
-
-</div>
-
-</div>
-</div>
-
-`;
 }
 
 
 
 // ГАЛЕРЕЯ
 
-function showGallery() {
+function showGallery(){
 
 app.innerHTML = `
-<div class="screen">
 
 <div class="menu">
+
 
 <h1 class="logo">
 Галерея
 </h1>
 
 
+
 <div class="menu-buttons">
 
 
-<p style="color:white;">
-Відкривається під час проходження гри
+<p>
+Галерея буде відкриватися під час проходження
 </p>
 
 
@@ -454,34 +377,36 @@ app.innerHTML = `
 
 </div>
 
-</div>
+
 </div>
 
 `;
+
 }
 
 
 
 // ПРО ГРУ
 
-function showAbout() {
+function showAbout(){
 
 app.innerHTML = `
-<div class="screen">
+
 <div class="menu">
+
 
 <h1 class="logo">
 Dreamwalker
 </h1>
 
 
+
 <div class="menu-buttons">
 
 
-<p style="color:white; max-width:400px; text-align:center;">
-Dreamwalker — це візуальна новела
-про мрії, страхи та шлях людини
-до своєї мети.
+<p>
+Dreamwalker — візуальна новела
+про мрії, страхи та шлях до мети.
 </p>
 
 
@@ -492,7 +417,7 @@ Dreamwalker — це візуальна новела
 
 </div>
 
-</div>
+
 </div>
 
 `;
@@ -501,6 +426,6 @@ Dreamwalker — це візуальна новела
 
 
 
-// запуск меню
+// запуск
 
 showMenu();

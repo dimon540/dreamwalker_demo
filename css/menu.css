@@ -577,3 +577,54 @@ button {
     cursor: pointer;
 
 }
+/* ===== FIX BUTTONS ===== */
+
+#app {
+
+    position: relative;
+
+}
+
+
+
+.menu {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+
+button {
+
+    position: relative;
+
+    z-index: 999;
+
+    pointer-events: auto !important;
+
+    cursor: pointer;
+
+}
+
+
+
+.menu-buttons,
+.chapters-panel,
+.settings-panel {
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+
+.logo {
+
+    pointer-events: none;
+
+}

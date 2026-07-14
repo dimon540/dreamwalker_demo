@@ -6,6 +6,7 @@ const app = document.getElementById("app");
 function showMenu() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -71,6 +72,7 @@ Dreamwalker
 function newGame() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -107,6 +109,7 @@ app.innerHTML = `
 function continueGame() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -143,6 +146,7 @@ app.innerHTML = `
 function showChapters() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -189,6 +193,7 @@ app.innerHTML = `
 function showSaves() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -235,6 +240,7 @@ app.innerHTML = `
 function showSettings() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -281,6 +287,7 @@ app.innerHTML = `
 function showGallery() {
 
 app.innerHTML = `
+<div class="screen">
 
 <div class="menu">
 
@@ -317,7 +324,7 @@ app.innerHTML = `
 function showAbout() {
 
 app.innerHTML = `
-
+<div class="screen">
 <div class="menu">
 
 <h1 class="logo">

@@ -531,3 +531,49 @@
 
 
 }
+/* Виправлення кліків у меню розділів */
+
+.menu,
+.chapters-panel,
+.chapter-card,
+.menu-buttons,
+button {
+
+    pointer-events: auto;
+
+}
+
+
+
+.chapters-panel {
+
+    position: relative;
+
+    z-index: 100;
+
+}
+
+
+
+.chapter-card {
+
+    position: relative;
+
+    z-index: 101;
+
+}
+
+
+
+.chapter-card button,
+.back-button {
+
+    position: relative;
+
+    z-index: 200;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+}

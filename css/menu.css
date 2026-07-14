@@ -29,19 +29,17 @@
 
     transform:translate(-50%, -50%);
 
-    font-size:120px;
+    font-size:50px;
 
-    color:white;
+    color:red;
 
-    opacity:0.05;
+    opacity:1;
 
-    letter-spacing:10px;
+    letter-spacing:0;
 
     white-space:nowrap;
 
     z-index:1;
-
-    user-select:none;
 
 }
 

@@ -1,9 +1,45 @@
 const app = document.getElementById("app");
 
 
-// ГОЛОВНЕ МЕНЮ
+// =========================
+// НАЛАШТУВАННЯ ГРИ
+// =========================
 
-function showMenu() {
+
+let settings = JSON.parse(localStorage.getItem("dreamwalkerSettings")) || {
+
+    music:70,
+
+    sound:80,
+
+    textSpeed:5,
+
+    language:"Українська",
+
+    autosave:true
+
+};
+
+
+
+function saveSettings(){
+
+    localStorage.setItem(
+        "dreamwalkerSettings",
+        JSON.stringify(settings)
+    );
+
+}
+
+
+
+// =========================
+// ГОЛОВНЕ МЕНЮ
+// =========================
+
+
+function showMenu(){
+
 
 app.innerHTML = `
 
@@ -54,6 +90,7 @@ Dreamwalker
 </button>
 
 
+
 </div>
 
 
@@ -65,13 +102,19 @@ Dreamwalker
 
 
 
+
+// =========================
 // НОВА ГРА
+// =========================
+
 
 function newGame(){
+
 
 app.innerHTML = `
 
 <div class="menu">
+
 
 <h1 class="logo">
 Нова гра
@@ -102,17 +145,24 @@ app.innerHTML = `
 
 
 
+
+// =========================
 // ПРОДОВЖИТИ
+// =========================
+
 
 function continueGame(){
+
 
 app.innerHTML = `
 
 <div class="menu">
 
+
 <h1 class="logo">
 Продовжити
 </h1>
+
 
 
 <div class="menu-buttons">
@@ -121,6 +171,7 @@ app.innerHTML = `
 <p>
 Збережень поки немає
 </p>
+
 
 
 <button onclick="showMenu()">
@@ -139,17 +190,24 @@ app.innerHTML = `
 
 
 
+
+// =========================
 // РОЗДІЛИ
+// =========================
+
 
 function showChapters(){
+
 
 app.innerHTML = `
 
 <div class="menu">
 
+
 <h1 class="logo">
 Розділи
 </h1>
+
 
 
 <div class="menu-buttons">
@@ -186,17 +244,24 @@ app.innerHTML = `
 
 
 
+
+// =========================
 // ЗБЕРЕЖЕННЯ
+// =========================
+
 
 function showSaves(){
+
 
 app.innerHTML = `
 
 <div class="menu">
 
+
 <h1 class="logo">
 Збереження
 </h1>
+
 
 
 <div class="menu-buttons">
@@ -233,9 +298,14 @@ app.innerHTML = `
 
 
 
+
+// =========================
 // НАЛАШТУВАННЯ
+// =========================
+
 
 function showSettings(){
+
 
 app.innerHTML = `
 
@@ -248,57 +318,92 @@ app.innerHTML = `
 
 
 
+
 <div class="settings-panel">
 
 
+
 <div class="setting">
 
+
 <label>
-🎵 Музика
+🎵 Музика: ${settings.music}%
 </label>
 
-<input type="range" value="70">
+
+<input 
+id="music"
+type="range"
+min="0"
+max="100"
+value="${settings.music}"
+>
+
 
 </div>
 
 
 
+
 <div class="setting">
 
+
 <label>
-🔊 Звуки
+🔊 Звуки: ${settings.sound}%
 </label>
 
-<input type="range" value="80">
+
+<input 
+id="sound"
+type="range"
+min="0"
+max="100"
+value="${settings.sound}"
+>
+
 
 </div>
 
 
 
+
 <div class="setting">
 
+
 <label>
-💬 Швидкість тексту
+💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
-<input type="range" value="50">
+
+<input 
+id="textSpeed"
+type="range"
+min="1"
+max="10"
+value="${settings.textSpeed}"
+>
+
 
 </div>
 
 
 
+
 <div class="setting">
+
 
 <label>
 🌐 Мова
 </label>
 
 
-<select>
+<select id="language">
+
 
 <option>
 Українська
 </option>
+
 
 <option>
 English
@@ -312,19 +417,36 @@ English
 
 
 
+
 <div class="setting">
+
 
 <label>
 
-<input type="checkbox" checked>
+
+<input 
+id="autosave"
+type="checkbox"
+${settings.autosave ? "checked" : ""}
+>
+
 
 Автозбереження
+
 
 </label>
 
 
 </div>
 
+
+
+
+<button onclick="applySettings()">
+
+Зберегти
+
+</button>
 
 
 
@@ -347,9 +469,59 @@ English
 
 
 
+
+// =========================
+// ЗАСТОСУВАТИ НАЛАШТУВАННЯ
+// =========================
+
+
+function applySettings(){
+
+
+settings.music =
+Number(document.getElementById("music").value);
+
+
+
+settings.sound =
+Number(document.getElementById("sound").value);
+
+
+
+settings.textSpeed =
+Number(document.getElementById("textSpeed").value);
+
+
+
+settings.language =
+document.getElementById("language").value;
+
+
+
+settings.autosave =
+document.getElementById("autosave").checked;
+
+
+
+saveSettings();
+
+
+
+showMenu();
+
+
+}
+
+
+
+
+// =========================
 // ГАЛЕРЕЯ
+// =========================
+
 
 function showGallery(){
+
 
 app.innerHTML = `
 
@@ -366,8 +538,9 @@ app.innerHTML = `
 
 
 <p>
-Галерея буде відкриватися під час проходження
+Галерея відкривається під час проходження
 </p>
+
 
 
 <button onclick="showMenu()">
@@ -386,9 +559,14 @@ app.innerHTML = `
 
 
 
+
+// =========================
 // ПРО ГРУ
+// =========================
+
 
 function showAbout(){
+
 
 app.innerHTML = `
 
@@ -410,6 +588,7 @@ Dreamwalker — візуальна новела
 </p>
 
 
+
 <button onclick="showMenu()">
 Назад
 </button>
@@ -426,6 +605,7 @@ Dreamwalker — візуальна новела
 
 
 
-// запуск
+
+// запуск гри
 
 showMenu();

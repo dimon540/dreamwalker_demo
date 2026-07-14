@@ -195,6 +195,120 @@ app.innerHTML = `
 
 
 
+<div class="chapters-panel">
+
+
+
+<div class="chapter-card open">
+
+
+<h2>
+Пролог
+</h2>
+
+
+<p>
+Початок історії Dreamwalker
+</p>
+
+
+<button>
+Почати
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="chapter-card locked">
+
+
+<h2>
+🔒 Розділ 1
+</h2>
+
+
+<p>
+Відкрийте після завершення прологу
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="chapter-card locked">
+
+
+<h2>
+🔒 Розділ 2
+</h2>
+
+
+<p>
+Недоступно
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="chapter-card locked">
+
+
+<h2>
+🔒 Розділ 3
+</h2>
+
+
+<p>
+Недоступно
+</p>
+
+
+</div>
+
+
+
+
+
+<button onclick="showMenu()">
+
+Назад
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+
+app.innerHTML = `
+
+<div class="menu">
+
+
+<h1 class="logo">
+Розділи
+</h1>
+
+
+
 <div class="menu-buttons">
 
 

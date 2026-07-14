@@ -77,15 +77,34 @@
 
 /* кнопки меню */
 
-.menu-buttons {
+.menu-buttons button {
 
-    display:flex;
+    width:220px;
 
-    flex-direction:column;
+    height:45px;
 
-    gap:16px;
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.05)
+    );
 
-    z-index:2;
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.7);
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(8px);
+
+    transition:0.3s;
 
 }
 

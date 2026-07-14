@@ -2,20 +2,15 @@ const app = document.getElementById("app");
 
 
 // =========================
-// НАЛАШТУВАННЯ ГРИ
+// НАЛАШТУВАННЯ
 // =========================
-
 
 let settings = JSON.parse(localStorage.getItem("dreamwalkerSettings")) || {
 
     music:70,
-
     sound:80,
-
     textSpeed:5,
-
     language:"Українська",
-
     autosave:true
 
 };
@@ -36,7 +31,6 @@ function saveSettings(){
 // =========================
 // ГОЛОВНЕ МЕНЮ
 // =========================
-
 
 function showMenu(){
 
@@ -107,7 +101,6 @@ Dreamwalker
 // НОВА ГРА
 // =========================
 
-
 function newGame(){
 
 
@@ -115,14 +108,12 @@ app.innerHTML = `
 
 <div class="menu">
 
-
 <h1 class="logo">
 Нова гра
 </h1>
 
 
 <div class="menu-buttons">
-
 
 <p>
 Початок історії Dreamwalker
@@ -135,7 +126,6 @@ app.innerHTML = `
 
 
 </div>
-
 
 </div>
 
@@ -150,7 +140,6 @@ app.innerHTML = `
 // ПРОДОВЖИТИ
 // =========================
 
-
 function continueGame(){
 
 
@@ -158,11 +147,9 @@ app.innerHTML = `
 
 <div class="menu">
 
-
 <h1 class="logo">
 Продовжити
 </h1>
-
 
 
 <div class="menu-buttons">
@@ -171,7 +158,6 @@ app.innerHTML = `
 <p>
 Збережень поки немає
 </p>
-
 
 
 <button onclick="showMenu()">
@@ -194,7 +180,6 @@ app.innerHTML = `
 // =========================
 // РОЗДІЛИ
 // =========================
-
 
 function showChapters(){
 
@@ -249,7 +234,6 @@ app.innerHTML = `
 // ЗБЕРЕЖЕННЯ
 // =========================
 
-
 function showSaves(){
 
 
@@ -303,7 +287,6 @@ app.innerHTML = `
 // НАЛАШТУВАННЯ
 // =========================
 
-
 function showSettings(){
 
 
@@ -318,15 +301,13 @@ app.innerHTML = `
 
 
 
-
 <div class="settings-panel">
 
 
 
 <div class="setting">
 
-
-<label>
+<label id="musicValue">
 🎵 Музика: ${settings.music}%
 </label>
 
@@ -347,8 +328,7 @@ value="${settings.music}"
 
 <div class="setting">
 
-
-<label>
+<label id="soundValue">
 🔊 Звуки: ${settings.sound}%
 </label>
 
@@ -369,8 +349,7 @@ value="${settings.sound}"
 
 <div class="setting">
 
-
-<label>
+<label id="textValue">
 💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
@@ -400,12 +379,12 @@ value="${settings.textSpeed}"
 <select id="language">
 
 
-<option>
+<option ${settings.language === "Українська" ? "selected" : ""}>
 Українська
 </option>
 
 
-<option>
+<option ${settings.language === "English" ? "selected" : ""}>
 English
 </option>
 
@@ -423,16 +402,13 @@ English
 
 <label>
 
-
 <input 
 id="autosave"
 type="checkbox"
 ${settings.autosave ? "checked" : ""}
 >
 
-
 Автозбереження
-
 
 </label>
 
@@ -443,17 +419,19 @@ ${settings.autosave ? "checked" : ""}
 
 
 <button onclick="applySettings()">
-
 Зберегти
+</button>
 
+
+
+<button onclick="resetSettings()">
+Скинути
 </button>
 
 
 
 <button onclick="showMenu()">
-
 Назад
-
 </button>
 
 
@@ -465,15 +443,46 @@ ${settings.autosave ? "checked" : ""}
 
 `;
 
+
+
+// живі значення
+
+
+document.getElementById("music").oninput = function(){
+
+document.getElementById("musicValue").innerHTML =
+"🎵 Музика: " + this.value + "%";
+
+};
+
+
+
+document.getElementById("sound").oninput = function(){
+
+document.getElementById("soundValue").innerHTML =
+"🔊 Звуки: " + this.value + "%";
+
+};
+
+
+
+document.getElementById("textSpeed").oninput = function(){
+
+document.getElementById("textValue").innerHTML =
+"💬 Швидкість тексту: " + this.value;
+
+};
+
+
+
 }
 
 
 
 
 // =========================
-// ЗАСТОСУВАТИ НАЛАШТУВАННЯ
+// ЗБЕРЕГТИ НАЛАШТУВАННЯ
 // =========================
-
 
 function applySettings(){
 
@@ -482,20 +491,16 @@ settings.music =
 Number(document.getElementById("music").value);
 
 
-
 settings.sound =
 Number(document.getElementById("sound").value);
-
 
 
 settings.textSpeed =
 Number(document.getElementById("textSpeed").value);
 
 
-
 settings.language =
 document.getElementById("language").value;
-
 
 
 settings.autosave =
@@ -506,8 +511,35 @@ document.getElementById("autosave").checked;
 saveSettings();
 
 
-
 showMenu();
+
+}
+
+
+
+
+// =========================
+// СКИНУТИ НАЛАШТУВАННЯ
+// =========================
+
+function resetSettings(){
+
+
+settings = {
+
+    music:70,
+    sound:80,
+    textSpeed:5,
+    language:"Українська",
+    autosave:true
+
+};
+
+
+saveSettings();
+
+
+showSettings();
 
 
 }
@@ -519,7 +551,6 @@ showMenu();
 // ГАЛЕРЕЯ
 // =========================
 
-
 function showGallery(){
 
 
@@ -527,20 +558,16 @@ app.innerHTML = `
 
 <div class="menu">
 
-
 <h1 class="logo">
 Галерея
 </h1>
 
 
-
 <div class="menu-buttons">
-
 
 <p>
 Галерея відкривається під час проходження
 </p>
-
 
 
 <button onclick="showMenu()">
@@ -564,7 +591,6 @@ app.innerHTML = `
 // ПРО ГРУ
 // =========================
 
-
 function showAbout(){
 
 
@@ -572,11 +598,9 @@ app.innerHTML = `
 
 <div class="menu">
 
-
 <h1 class="logo">
 Dreamwalker
 </h1>
-
 
 
 <div class="menu-buttons">
@@ -586,7 +610,6 @@ Dreamwalker
 Dreamwalker — візуальна новела
 про мрії, страхи та шлях до мети.
 </p>
-
 
 
 <button onclick="showMenu()">
@@ -606,6 +629,6 @@ Dreamwalker — візуальна новела
 
 
 
-// запуск гри
+// запуск
 
 showMenu();

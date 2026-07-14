@@ -34,16 +34,13 @@ function saveSettings(){
 
 function showMenu(){
 
-
 app.innerHTML = `
 
 <div class="menu">
 
-
 <h1 class="logo">
 Dreamwalker
 </h1>
-
 
 
 <div class="menu-buttons">
@@ -84,9 +81,7 @@ Dreamwalker
 </button>
 
 
-
 </div>
-
 
 </div>
 
@@ -96,13 +91,11 @@ Dreamwalker
 
 
 
-
 // =========================
 // НОВА ГРА
 // =========================
 
 function newGame(){
-
 
 app.innerHTML = `
 
@@ -135,13 +128,11 @@ app.innerHTML = `
 
 
 
-
 // =========================
 // ПРОДОВЖИТИ
 // =========================
 
 function continueGame(){
-
 
 app.innerHTML = `
 
@@ -153,7 +144,6 @@ app.innerHTML = `
 
 
 <div class="menu-buttons">
-
 
 <p>
 Збережень поки немає
@@ -167,7 +157,6 @@ app.innerHTML = `
 
 </div>
 
-
 </div>
 
 `;
@@ -176,13 +165,11 @@ app.innerHTML = `
 
 
 
-
 // =========================
 // РОЗДІЛИ
 // =========================
 
 function showChapters(){
-
 
 app.innerHTML = `
 
@@ -199,11 +186,11 @@ app.innerHTML = `
 
 
 
-<div class="chapter-card open">
+<div class="chapter-card">
 
 
 <h2>
-Пролог
+🌙 Пролог
 </h2>
 
 
@@ -212,7 +199,7 @@ app.innerHTML = `
 </p>
 
 
-<button>
+<button onclick="newGame()">
 Почати
 </button>
 
@@ -232,7 +219,7 @@ app.innerHTML = `
 
 
 <p>
-Відкрийте після завершення прологу
+Завершіть пролог
 </p>
 
 
@@ -279,7 +266,6 @@ app.innerHTML = `
 
 
 
-
 <button onclick="showMenu()">
 
 Назад
@@ -296,51 +282,6 @@ app.innerHTML = `
 `;
 
 }
-
-
-app.innerHTML = `
-
-<div class="menu">
-
-
-<h1 class="logo">
-Розділи
-</h1>
-
-
-
-<div class="menu-buttons">
-
-
-<button>
-Розділ 1
-</button>
-
-
-<button>
-Розділ 2
-</button>
-
-
-<button>
-Розділ 3
-</button>
-
-
-<button onclick="showMenu()">
-Назад
-</button>
-
-
-</div>
-
-
-</div>
-
-`;
-
-}
-
 
 
 
@@ -350,34 +291,21 @@ app.innerHTML = `
 
 function showSaves(){
 
-
 app.innerHTML = `
 
 <div class="menu">
-
 
 <h1 class="logo">
 Збереження
 </h1>
 
 
-
 <div class="menu-buttons">
 
 
-<button>
-Слот 1
-</button>
-
-
-<button>
-Слот 2
-</button>
-
-
-<button>
-Слот 3
-</button>
+<p>
+Слотів поки немає
+</p>
 
 
 <button onclick="showMenu()">
@@ -396,18 +324,15 @@ app.innerHTML = `
 
 
 
-
 // =========================
 // НАЛАШТУВАННЯ
 // =========================
 
 function showSettings(){
 
-
 app.innerHTML = `
 
 <div class="menu">
-
 
 <h1 class="logo">
 Налаштування
@@ -425,7 +350,6 @@ app.innerHTML = `
 🎵 Музика: ${settings.music}%
 </label>
 
-
 <input 
 id="music"
 type="range"
@@ -434,9 +358,7 @@ max="100"
 value="${settings.music}"
 >
 
-
 </div>
-
 
 
 
@@ -446,7 +368,6 @@ value="${settings.music}"
 🔊 Звуки: ${settings.sound}%
 </label>
 
-
 <input 
 id="sound"
 type="range"
@@ -455,9 +376,7 @@ max="100"
 value="${settings.sound}"
 >
 
-
 </div>
-
 
 
 
@@ -467,7 +386,6 @@ value="${settings.sound}"
 💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
-
 <input 
 id="textSpeed"
 type="range"
@@ -476,14 +394,11 @@ max="10"
 value="${settings.textSpeed}"
 >
 
-
 </div>
 
 
 
-
 <div class="setting">
-
 
 <label>
 🌐 Мова
@@ -492,43 +407,37 @@ value="${settings.textSpeed}"
 
 <select id="language">
 
-
-<option ${settings.language === "Українська" ? "selected" : ""}>
+<option ${settings.language==="Українська" ? "selected":""}>
 Українська
 </option>
 
 
-<option ${settings.language === "English" ? "selected" : ""}>
+<option ${settings.language==="English" ? "selected":""}>
 English
 </option>
 
 
 </select>
 
-
 </div>
 
 
 
-
 <div class="setting">
-
 
 <label>
 
 <input 
 id="autosave"
 type="checkbox"
-${settings.autosave ? "checked" : ""}
+${settings.autosave ? "checked":""}
 >
 
 Автозбереження
 
 </label>
 
-
 </div>
-
 
 
 
@@ -537,17 +446,14 @@ ${settings.autosave ? "checked" : ""}
 </button>
 
 
-
 <button onclick="resetSettings()">
 Скинути
 </button>
 
 
-
 <button onclick="showMenu()">
 Назад
 </button>
-
 
 
 </div>
@@ -559,38 +465,33 @@ ${settings.autosave ? "checked" : ""}
 
 
 
-// живі значення
-
-
-document.getElementById("music").oninput = function(){
+document.getElementById("music").oninput=function(){
 
 document.getElementById("musicValue").innerHTML =
-"🎵 Музика: " + this.value + "%";
+"🎵 Музика: "+this.value+"%";
 
 };
 
 
 
-document.getElementById("sound").oninput = function(){
+document.getElementById("sound").oninput=function(){
 
 document.getElementById("soundValue").innerHTML =
-"🔊 Звуки: " + this.value + "%";
+"🔊 Звуки: "+this.value+"%";
 
 };
 
 
 
-document.getElementById("textSpeed").oninput = function(){
+document.getElementById("textSpeed").oninput=function(){
 
 document.getElementById("textValue").innerHTML =
-"💬 Швидкість тексту: " + this.value;
+"💬 Швидкість тексту: "+this.value;
 
 };
-
 
 
 }
-
 
 
 
@@ -599,7 +500,6 @@ document.getElementById("textValue").innerHTML =
 // =========================
 
 function applySettings(){
-
 
 settings.music =
 Number(document.getElementById("music").value);
@@ -621,7 +521,6 @@ settings.autosave =
 document.getElementById("autosave").checked;
 
 
-
 saveSettings();
 
 
@@ -631,33 +530,28 @@ showMenu();
 
 
 
-
 // =========================
-// СКИНУТИ НАЛАШТУВАННЯ
+// СКИНУТИ
 // =========================
 
 function resetSettings(){
 
+settings={
 
-settings = {
-
-    music:70,
-    sound:80,
-    textSpeed:5,
-    language:"Українська",
-    autosave:true
+music:70,
+sound:80,
+textSpeed:5,
+language:"Українська",
+autosave:true
 
 };
 
 
 saveSettings();
 
-
 showSettings();
 
-
 }
-
 
 
 
@@ -667,8 +561,7 @@ showSettings();
 
 function showGallery(){
 
-
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -680,7 +573,7 @@ app.innerHTML = `
 <div class="menu-buttons">
 
 <p>
-Галерея відкривається під час проходження
+Відкривається під час проходження
 </p>
 
 
@@ -691,13 +584,11 @@ app.innerHTML = `
 
 </div>
 
-
 </div>
 
 `;
 
 }
-
 
 
 
@@ -707,8 +598,7 @@ app.innerHTML = `
 
 function showAbout(){
 
-
-app.innerHTML = `
+app.innerHTML=`
 
 <div class="menu">
 
@@ -719,10 +609,9 @@ Dreamwalker
 
 <div class="menu-buttons">
 
-
 <p>
-Dreamwalker — візуальна новела
-про мрії, страхи та шлях до мети.
+Візуальна новела про мрії,
+страхи та шлях до мети.
 </p>
 
 
@@ -733,13 +622,11 @@ Dreamwalker — візуальна новела
 
 </div>
 
-
 </div>
 
 `;
 
 }
-
 
 
 

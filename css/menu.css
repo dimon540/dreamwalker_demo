@@ -13,12 +13,37 @@
 
     overflow:hidden;
 
-    background:#111;
+    background:
+    radial-gradient(circle at 50% 20%,
+    #6b6fd6,
+    #30285c 40%,
+    #0b0b18 85%);
 
 }
 
 
-/* Фоновий логотип */
+/* додаткове світіння фону */
+
+.menu::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,0.18),
+    transparent 55%);
+
+    z-index:0;
+
+}
+
+
+/* великий напис Dreamwalker позаду */
 
 .logo {
 
@@ -29,13 +54,13 @@
 
     transform:translate(-50%, -50%);
 
-    font-size:140px;
+    font-size:150px;
 
     color:white;
 
-    opacity:0.15;
+    opacity:0.12;
 
-    letter-spacing:15px;
+    letter-spacing:18px;
 
     white-space:nowrap;
 
@@ -44,13 +69,13 @@
     user-select:none;
 
     text-shadow:
-    0 0 20px white,
-    0 0 40px #777;
+    0 0 20px rgba(255,255,255,0.8),
+    0 0 50px rgba(150,150,255,0.8);
 
 }
 
 
-/* Кнопки */
+/* кнопки меню */
 
 .menu-buttons {
 
@@ -58,47 +83,82 @@
 
     flex-direction:column;
 
-    gap:15px;
+    gap:16px;
 
     z-index:2;
 
 }
 
 
-/* Стиль кнопок */
+/* самі кнопки */
 
 .menu-buttons button {
 
-    width:260px;
+    width:280px;
 
-    height:55px;
+    height:60px;
 
-    background:rgba(255,255,255,0.1);
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.05)
+    );
+
 
     color:white;
 
-    border:2px solid white;
+    border:
 
-    border-radius:5px;
+    1px solid rgba(255,255,255,0.7);
 
-    font-size:20px;
+
+    border-radius:12px;
+
+
+    font-size:21px;
+
+    letter-spacing:2px;
+
 
     cursor:pointer;
 
+
+    backdrop-filter:blur(8px);
+
+
     transition:0.3s;
+
 
 }
 
 
+/* ефект наведення */
+
 .menu-buttons button:hover {
 
-   background:
-radial-gradient(circle at top,
-#4b4f9c,
-#211f45 45%,
-#090914);
-    color:black;
 
-    transform:scale(1.08);
+    background:
+
+    linear-gradient(
+    135deg,
+    white,
+    #c7c9ff
+    );
+
+
+    color:#111;
+
+
+    transform:
+
+    translateY(-5px)
+    scale(1.05);
+
+
+    box-shadow:
+
+    0 0 25px rgba(255,255,255,0.5);
+
 
 }

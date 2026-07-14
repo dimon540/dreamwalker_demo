@@ -462,7 +462,7 @@ app.innerHTML = `
 Галерея
 </h1>
 
-<button type="button" onclick="showMenu()">
+<button class="game-button" type="button" onclick="showMenu()">
 ← Назад
 </button>
 
@@ -491,10 +491,9 @@ Dreamwalker
 </p>
 
 
-<button type="button" onclick="showMenu()">
+<button class="game-button" type="button" onclick="showMenu()">
 ← Назад
 </button>
-
 
 </div>
 

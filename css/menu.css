@@ -23,6 +23,98 @@
 
 
 /* світіння фону */
+.chapters-panel {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    width:360px;
+
+}
+
+
+
+.chapter-card {
+
+
+    padding:20px;
+
+
+    border-radius:15px;
+
+
+    background:rgba(255,255,255,0.12);
+
+
+    color:white;
+
+
+    border:1px solid rgba(255,255,255,0.3);
+
+
+    text-align:center;
+
+
+    animation:fadeIn 0.6s ease;
+
+
+}
+
+
+
+.chapter-card h2 {
+
+    margin:0 0 10px;
+
+}
+
+
+
+.chapter-card p {
+
+    opacity:0.8;
+
+}
+
+
+
+
+.chapter-card button {
+
+
+    margin-top:15px;
+
+
+    padding:10px 30px;
+
+
+    border-radius:10px;
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+.locked {
+
+
+    opacity:0.45;
+
+
+    filter:grayscale(0.5);
+
+
+}
 
 .menu::before {
 

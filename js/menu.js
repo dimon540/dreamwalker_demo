@@ -241,6 +241,148 @@ app.innerHTML = `
 function showSettings() {
 
 app.innerHTML = `
+
+<div class="menu">
+
+
+<h1 class="logo">
+Налаштування
+</h1>
+
+
+
+<div class="settings-panel">
+
+
+<div class="setting">
+
+<label>
+🎵 Гучність музики
+</label>
+
+<input 
+type="range"
+min="0"
+max="100"
+value="70"
+>
+
+</div>
+
+
+
+<div class="setting">
+
+<label>
+🔊 Гучність ефектів
+</label>
+
+<input 
+type="range"
+min="0"
+max="100"
+value="80"
+>
+
+</div>
+
+
+
+<div class="setting">
+
+<label>
+💬 Швидкість тексту
+</label>
+
+<input 
+type="range"
+min="1"
+max="10"
+value="5"
+>
+
+</div>
+
+
+
+
+<div class="setting">
+
+
+<label>
+🌐 Мова
+</label>
+
+
+<select>
+
+<option>
+Українська
+</option>
+
+<option>
+English
+</option>
+
+</select>
+
+
+</div>
+
+
+
+
+<div class="setting checkbox">
+
+
+<label>
+
+<input type="checkbox" checked>
+
+Автозбереження
+
+</label>
+
+
+</div>
+
+
+
+<div class="setting checkbox">
+
+
+<label>
+
+<input type="checkbox" checked>
+
+Ефекти переходів
+
+</label>
+
+
+</div>
+
+
+
+
+<button onclick="showMenu()">
+
+Назад
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+app.innerHTML = `
 <div class="screen">
 
 <div class="menu">

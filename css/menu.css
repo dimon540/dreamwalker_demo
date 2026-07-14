@@ -28,7 +28,12 @@
     letter-spacing:8px;
 
 }
-
+.logo {
+    text-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px #555;
+}
 .menu-buttons {
 
     display:flex;

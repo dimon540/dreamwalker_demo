@@ -96,10 +96,9 @@ Dreamwalker
 
 function newGame(){
 
-    alert("Початок гри буде тут");
+    startScene("scene1");
 
 }
-
 
 
 // =========================

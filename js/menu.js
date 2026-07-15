@@ -2,6 +2,31 @@ const app = document.getElementById("app");
 
 
 // =========================
+// PLAYER NAME
+// =========================
+
+let player = JSON.parse(
+    localStorage.getItem("dreamwalkerPlayer")
+)
+||
+{
+    name:"Єва"
+};
+
+
+
+function savePlayer(){
+
+    localStorage.setItem(
+        "dreamwalkerPlayer",
+        JSON.stringify(player)
+    );
+
+}
+
+
+
+// =========================
 // SETTINGS
 // =========================
 
@@ -108,9 +133,111 @@ DREAMWALKER
 
 function newGame(){
 
-    startScene("scene1");
+    showNameCreate();
 
 }
+
+
+
+// =========================
+// NAME CREATION
+// =========================
+
+function showNameCreate(){
+
+
+app.innerHTML = `
+
+
+<div class="menu name-screen">
+
+
+<h1 class="logo">
+Як тебе звати?
+</h1>
+
+
+
+<div class="settings-panel">
+
+
+<p>
+Ім'я головної героїні
+</p>
+
+
+
+<input
+
+id="playerName"
+
+class="name-input"
+
+value="${player.name}"
+
+maxlength="15"
+
+
+>
+
+
+
+<button 
+class="game-button"
+
+onclick="confirmName()">
+
+Почати
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+function confirmName(){
+
+
+let name =
+
+document.getElementById("playerName")
+.value
+.trim();
+
+
+
+if(name === ""){
+
+    name="Єва";
+
+}
+
+
+
+player.name=name;
+
+
+savePlayer();
+
+
+
+startScene("scene1");
+
+
+}
+
+
 
 
 
@@ -183,7 +310,7 @@ app.innerHTML=`
 
 
 <p>
-Незнайомий місто
+Незнайоме місто
 </p>
 
 
@@ -197,7 +324,6 @@ app.innerHTML=`
 
 
 <div class="chapter-card locked">
-
 
 <h2>
 🔒 Розділ 1
@@ -213,9 +339,7 @@ app.innerHTML=`
 
 
 
-
 <div class="chapter-card locked">
-
 
 <h2>
 🔒 Розділ 2
@@ -231,9 +355,7 @@ app.innerHTML=`
 
 
 
-
 <div class="chapter-card locked">
-
 
 <h2>
 🔒 Розділ 3
@@ -330,7 +452,6 @@ app.innerHTML=`
 <div class="settings-panel">
 
 
-
 <label id="musicLabel">
 🎵 Музика: ${settings.music}%
 </label>
@@ -409,7 +530,6 @@ ${settings.autosave ? "checked":""}
 
 
 
-
 <button onclick="applySettings()">
 Зберегти
 </button>
@@ -433,8 +553,6 @@ ${settings.autosave ? "checked":""}
 
 document.getElementById("music").oninput=function(){
 
-settings.music=this.value;
-
 document.getElementById("musicLabel").innerHTML =
 "🎵 Музика: "+this.value+"%";
 
@@ -443,8 +561,6 @@ document.getElementById("musicLabel").innerHTML =
 
 
 document.getElementById("sound").oninput=function(){
-
-settings.sound=this.value;
 
 document.getElementById("soundLabel").innerHTML =
 "🔊 Звуки: "+this.value+"%";
@@ -455,8 +571,6 @@ document.getElementById("soundLabel").innerHTML =
 
 document.getElementById("textSpeed").oninput=function(){
 
-settings.textSpeed=this.value;
-
 document.getElementById("textLabel").innerHTML =
 "💬 Швидкість тексту: "+this.value;
 
@@ -464,7 +578,6 @@ document.getElementById("textLabel").innerHTML =
 
 
 }
-
 
 
 

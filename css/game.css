@@ -426,3 +426,26 @@ translateY(0);
 
 
 }
+/* FIX GAME BUTTON POSITION */
+
+.screen .game-button {
+
+    position:absolute !important;
+
+    right:30px !important;
+
+    bottom:25px !important;
+
+    left:auto !important;
+
+    top:auto !important;
+
+
+    width:130px;
+
+    height:45px;
+
+
+    z-index:20;
+
+}

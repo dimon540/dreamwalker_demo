@@ -2,7 +2,9 @@ const app = document.getElementById("app");
 
 
 
-let settings = JSON.parse(localStorage.getItem("dreamwalkerSettings")) || {
+let settings = JSON.parse(
+localStorage.getItem("dreamwalkerSettings")
+) || {
 
 music:70,
 sound:80,
@@ -34,7 +36,7 @@ app.innerHTML = `
 
 
 <h1 class="logo">
-Dreamwalker
+DREAMWALKER
 </h1>
 
 
@@ -69,6 +71,7 @@ Dreamwalker
 </div>
 
 
+
 </div>
 
 
@@ -77,6 +80,7 @@ Dreamwalker
 
 
 }
+
 
 
 
@@ -92,19 +96,20 @@ startScene("scene1");
 
 
 
+
 function continueGame(){
 
 
 app.innerHTML=`
 
-
 <div class="menu">
-
 
 <h1 class="logo">
 Продовжити
 </h1>
 
+
+<div class="menu-buttons">
 
 <p>
 Збережень поки немає
@@ -112,19 +117,17 @@ app.innerHTML=`
 
 
 <button onclick="showMenu()">
-Назад
+← Назад
 </button>
 
 
 </div>
 
+</div>
 
 `;
 
-
-
 }
-
 
 
 
@@ -134,7 +137,6 @@ function showChapters(){
 
 app.innerHTML=`
 
-
 <div class="menu">
 
 
@@ -143,16 +145,33 @@ app.innerHTML=`
 </h1>
 
 
-<div class="menu-buttons">
+<div class="chapters-panel">
+
+
+<div class="chapter-card">
+
+
+<h2>
+🌙 Пролог
+</h2>
+
+
+<p>
+Незнайомий місто
+</p>
 
 
 <button onclick="newGame()">
-Пролог
+Почати
 </button>
+
+
+</div>
+
 
 
 <button onclick="showMenu()">
-Назад
+← Назад
 </button>
 
 
@@ -161,10 +180,7 @@ app.innerHTML=`
 
 </div>
 
-
 `;
-
-
 
 }
 
@@ -176,7 +192,6 @@ function showSettings(){
 
 
 app.innerHTML=`
-
 
 <div class="menu">
 
@@ -191,40 +206,46 @@ app.innerHTML=`
 
 
 <label>
-Музика
+🎵 Музика ${settings.music}%
 </label>
 
 
-<input type="range">
-
+<input 
+type="range"
+min="0"
+max="100"
+value="${settings.music}"
+>
 
 
 <label>
-Звуки
+🔊 Звуки ${settings.sound}%
 </label>
 
 
-<input type="range">
+<input 
+type="range"
+min="0"
+max="100"
+value="${settings.sound}"
+>
 
 
 
 <button onclick="showMenu()">
-Назад
+← Назад
 </button>
 
 
-
 </div>
 
 
 </div>
-
 
 `;
 
-
-
 }
+
 
 
 

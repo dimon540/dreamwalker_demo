@@ -96,9 +96,7 @@ Dreamwalker
 
 function newGame(){
 
-    showNameCreate();
-
-}
+    alert("Початок гри буде тут");
 
 }
 
@@ -126,7 +124,7 @@ app.innerHTML = `
 </p>
 
 
-<button type="button" onclick="showMenu()">
+<button onclick="showMenu()">
 ← Назад
 </button>
 
@@ -148,24 +146,19 @@ app.innerHTML = `
 
 function showChapters(){
 
-
 app.innerHTML = `
 
 <div class="menu">
-
 
 <h1 class="logo">
 Розділи
 </h1>
 
 
-
 <div class="chapters-panel">
 
 
-
 <div class="chapter-card">
-
 
 <h2>
 🌙 Пролог
@@ -177,18 +170,12 @@ app.innerHTML = `
 </p>
 
 
-<button 
-type="button"
-onclick="newGame()">
-
+<button onclick="newGame()">
 ▶ Почати
-
 </button>
 
 
 </div>
-
-
 
 
 
@@ -198,54 +185,26 @@ onclick="newGame()">
 🔒 Розділ 1
 </h2>
 
-
 <p>
 Завершіть пролог
 </p>
 
-
 </div>
 
 
 
-
-
-<div class="chapter-card locked">
-
-<h2>
-🔒 Розділ 2
-</h2>
-
-
-<p>
-Недоступно
-</p>
-
-
-</div>
-
-
-
-<button 
-type="button"
-onclick="showMenu()">
-
+<button onclick="showMenu()">
 ← Назад
-
 </button>
 
 
-
 </div>
-
 
 </div>
 
 `;
 
 }
-
-
 
 
 
@@ -271,7 +230,7 @@ app.innerHTML=`
 </p>
 
 
-<button type="button" onclick="showMenu()">
+<button onclick="showMenu()">
 ← Назад
 </button>
 
@@ -314,14 +273,12 @@ app.innerHTML = `
 <input id="music" type="range" min="0" max="100" value="${settings.music}">
 
 
-
 <label id="soundValue">
 🔊 Звуки: ${settings.sound}%
 </label>
 
 
 <input id="sound" type="range" min="0" max="100" value="${settings.sound}">
-
 
 
 <label id="textValue">
@@ -332,13 +289,12 @@ app.innerHTML = `
 <input id="textSpeed" type="range" min="1" max="10" value="${settings.textSpeed}">
 
 
-
-<button type="button" onclick="applySettings()">
+<button onclick="applySettings()">
 Зберегти
 </button>
 
 
-<button type="button" onclick="showMenu()">
+<button onclick="showMenu()">
 ← Назад
 </button>
 
@@ -380,7 +336,6 @@ document.getElementById("textValue").innerHTML =
 
 
 
-
 function applySettings(){
 
 settings.music =
@@ -401,7 +356,6 @@ saveSettings();
 showMenu();
 
 }
-
 
 
 
@@ -467,68 +421,8 @@ Dreamwalker
 
 
 
-// запуск меню
+// =========================
+// ЗАПУСК
+// =========================
 
 showMenu();
-function showNameCreate(){
-
-
-app.innerHTML = `
-
-
-<div class="menu">
-
-
-<h1 class="logo">
-
-Хто ти?
-
-</h1>
-
-
-
-<div class="menu-buttons">
-
-
-<input 
-id="playerName"
-placeholder="Єва"
-value="${player.name}"
->
-
-
-
-<button onclick="confirmName()">
-
-Продовжити
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-`;
-
-}
-
-
-
-
-function confirmName(){
-
-
-let name =
-document.getElementById("playerName").value;
-
-
-setPlayerName(name);
-
-
-startScene("scene1");
-
-
-}

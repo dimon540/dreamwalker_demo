@@ -3,7 +3,7 @@
 // =========================
 
 console.log("Двигун гри запущено.");
-let sceneMusic = null;
+
 
 let currentScene = null;
 
@@ -13,10 +13,11 @@ let typing = false;
 
 let typingTimer;
 
+let sceneMusic = null;
 
 
 // =========================
-// ЗАПУСК СЦЕНИ
+// START SCENE
 // =========================
 
 function startScene(sceneName){
@@ -37,19 +38,24 @@ function startScene(sceneName){
     }
 
 
+
     currentScene = scene;
 
     currentStep = 0;
 
 
+    playSceneMusic(sceneName);
+
+
     showStep();
+
 
 }
 
 
 
 // =========================
-// ПОКАЗ КАДРУ
+// SHOW STEP
 // =========================
 
 function showStep(){
@@ -91,9 +97,7 @@ function showStep(){
 
 
 
-            <div id="dialogue">
-
-            </div>
+            <div id="dialogue"></div>
 
 
 
@@ -102,7 +106,7 @@ function showStep(){
 
 
         <button 
-        class="game-button" 
+        class="game-button"
         onclick="nextStep()">
 
             Далі
@@ -123,18 +127,21 @@ function showStep(){
 
 
 
-    // прибираємо старі ефекти
-
     bg.classList.remove(
+
         "background-hide",
+
         "background-show",
+
         "camera-close",
+
         "camera-far"
+
     );
 
 
 
-    // затемнення перед зміною
+    // затемнення
 
     bg.classList.add(
         "background-hide"
@@ -200,9 +207,8 @@ function showStep(){
 
 
 
-
 // =========================
-// ДРУК ТЕКСТУ
+// TEXT TYPING
 // =========================
 
 function typeText(text){
@@ -218,7 +224,6 @@ function typeText(text){
 
 
     let index = 0;
-
 
 
     typing = true;
@@ -256,22 +261,19 @@ function typeText(text){
 
 
 
-
 // =========================
-// КНОПКА ДАЛІ
+// NEXT BUTTON
 // =========================
 
 function nextStep(){
 
 
 
-    // якщо текст друкується
-    // показати одразу весь
-
     if(typing){
 
 
         clearInterval(typingTimer);
+
 
 
         document.getElementById("dialogue").innerHTML =
@@ -281,6 +283,7 @@ function nextStep(){
 
 
         typing = false;
+
 
 
         return;
@@ -305,7 +308,110 @@ function nextStep(){
     else{
 
 
+        stopSceneMusic();
+
+
         showMenu();
+
+
+    }
+
+
+
+}
+
+
+
+// =========================
+// MUSIC SYSTEM
+// =========================
+
+
+function playSceneMusic(sceneName){
+
+
+
+    if(sceneMusic){
+
+
+        sceneMusic.pause();
+
+
+        sceneMusic.currentTime = 0;
+
+
+    }
+
+
+
+
+    if(sceneName === "scene1"){
+
+
+
+        sceneMusic = new Audio(
+
+            "assets/music/scene1.mp3"
+
+        );
+
+
+
+        sceneMusic.loop = true;
+
+
+
+        sceneMusic.volume = 0.7;
+
+
+
+        sceneMusic.play()
+
+        .then(()=>{
+
+
+            console.log(
+                "Музика сцени запущена"
+            );
+
+
+        })
+
+        .catch(error=>{
+
+
+            console.log(
+                "Автозапуск музики заблоковано",
+                error
+            );
+
+
+        });
+
+
+
+    }
+
+
+
+}
+
+
+
+// =========================
+// STOP MUSIC
+// =========================
+
+function stopSceneMusic(){
+
+
+    if(sceneMusic){
+
+
+        sceneMusic.pause();
+
+
+        sceneMusic.currentTime = 0;
 
 
     }

@@ -80,7 +80,8 @@ function showStep(){
 
 
 
-    app.innerHTML = `
+   app.innerHTML = `
+<div class="screen screen-intro">
 
 
     <div class="screen">

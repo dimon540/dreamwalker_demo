@@ -13,7 +13,13 @@ let typing = false;
 
 let typingTimer;
 
+
+// Аудіо
+
 let sceneMusic = null;
+
+let citySound = null;
+
 
 
 // =========================
@@ -44,13 +50,17 @@ function startScene(sceneName){
     currentStep = 0;
 
 
-    playSceneMusic(sceneName);
+
+    playSceneAudio(sceneName);
+
 
 
     showStep();
 
 
 }
+
+
 
 
 
@@ -105,7 +115,7 @@ function showStep(){
 
 
 
-        <button 
+        <button
         class="game-button"
         onclick="nextStep()">
 
@@ -141,8 +151,6 @@ function showStep(){
 
 
 
-    // затемнення
-
     bg.classList.add(
         "background-hide"
     );
@@ -157,8 +165,6 @@ function showStep(){
         `url("${step.background}")`;
 
 
-
-        // камера
 
         if(step.camera === "close"){
 
@@ -207,6 +213,8 @@ function showStep(){
 
 
 
+
+
 // =========================
 // TEXT TYPING
 // =========================
@@ -224,6 +232,7 @@ function typeText(text){
 
 
     let index = 0;
+
 
 
     typing = true;
@@ -261,6 +270,8 @@ function typeText(text){
 
 
 
+
+
 // =========================
 // NEXT BUTTON
 // =========================
@@ -285,7 +296,6 @@ function nextStep(){
         typing = false;
 
 
-
         return;
 
 
@@ -308,7 +318,7 @@ function nextStep(){
     else{
 
 
-        stopSceneMusic();
+        stopSceneAudio();
 
 
         showMenu();
@@ -317,37 +327,28 @@ function nextStep(){
     }
 
 
-
 }
 
 
 
+
+
 // =========================
-// MUSIC SYSTEM
+// AUDIO SYSTEM
 // =========================
 
-
-function playSceneMusic(sceneName){
-
+function playSceneAudio(sceneName){
 
 
-    if(sceneMusic){
-
-
-        sceneMusic.pause();
-
-
-        sceneMusic.currentTime = 0;
-
-
-    }
-
+    stopSceneAudio();
 
 
 
     if(sceneName === "scene1"){
 
 
+
+        // музика
 
         sceneMusic = new Audio(
 
@@ -356,12 +357,26 @@ function playSceneMusic(sceneName){
         );
 
 
-
         sceneMusic.loop = true;
 
 
-
         sceneMusic.volume = 0.7;
+
+
+
+        // звук міста
+
+        citySound = new Audio(
+
+            "assets/sounds/city.mp3"
+
+        );
+
+
+        citySound.loop = true;
+
+
+        citySound.volume = 0.25;
 
 
 
@@ -369,22 +384,39 @@ function playSceneMusic(sceneName){
 
         .then(()=>{
 
-
             console.log(
                 "Музика сцени запущена"
             );
-
 
         })
 
         .catch(error=>{
 
-
             console.log(
-                "Автозапуск музики заблоковано",
+                "Музика заблокована браузером",
                 error
             );
 
+        });
+
+
+
+        citySound.play()
+
+        .then(()=>{
+
+            console.log(
+                "Звук міста запущений"
+            );
+
+        })
+
+        .catch(error=>{
+
+            console.log(
+                "Звук міста заблокований",
+                error
+            );
 
         });
 
@@ -393,16 +425,17 @@ function playSceneMusic(sceneName){
     }
 
 
-
 }
 
 
 
+
 // =========================
-// STOP MUSIC
+// STOP AUDIO
 // =========================
 
-function stopSceneMusic(){
+function stopSceneAudio(){
+
 
 
     if(sceneMusic){
@@ -415,6 +448,20 @@ function stopSceneMusic(){
 
 
     }
+
+
+
+    if(citySound){
+
+
+        citySound.pause();
+
+
+        citySound.currentTime = 0;
+
+
+    }
+
 
 
 }

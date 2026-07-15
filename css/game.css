@@ -1,7 +1,16 @@
+/* ========================= */
+/* DREAMWALKER GAME SCREEN */
+/* ========================= */
+
+
 .screen {
 
     width:100vw;
+
     height:100vh;
+
+    height:100dvh;
+
 
     position:relative;
 
@@ -13,17 +22,25 @@
 
 
 
-/* фон сцени */
+/* ========================= */
+/* BACKGROUND */
+/* ========================= */
+
 
 #background {
 
     position:absolute;
 
+
     top:0;
+
     left:0;
 
+
     width:100%;
+
     height:100%;
+
 
     background-size:cover;
 
@@ -31,31 +48,39 @@
 
     background-repeat:no-repeat;
 
+
     z-index:1;
 
 }
 
 
 
-/* діалогове вікно */
+/* ========================= */
+/* DIALOGUE BOX */
+/* ========================= */
+
 
 #dialogue {
 
+
     position:absolute;
 
-    left:50%;
 
-    bottom:60px;
+    left:5%;
 
-    transform:translateX(-50%);
+    right:5%;
 
 
-    width:75%;
+    bottom:90px;
+
 
     min-height:120px;
 
 
     padding:25px;
+
+
+    box-sizing:border-box;
 
 
     display:flex;
@@ -68,7 +93,10 @@
     background:rgba(0,0,0,0.75);
 
 
-    border:2px solid rgba(255,255,255,0.3);
+    border:
+
+    2px solid rgba(255,255,255,0.35);
+
 
     border-radius:20px;
 
@@ -78,42 +106,59 @@
 
     font-size:24px;
 
+
+    line-height:1.5;
+
+
     text-align:center;
 
 
     z-index:5;
 
+
 }
 
 
 
-/* кнопка далі */
+/* ========================= */
+/* NEXT BUTTON */
+/* ========================= */
+
 
 .game-button {
+
 
     position:absolute;
 
 
-    right:50px;
-
-    bottom:40px;
+    right:30px;
 
 
-    width:220px;
+    bottom:25px;
+
+
+    width:200px;
+
 
     height:55px;
-
-
-    border-radius:15px;
 
 
     border:none;
 
 
-    background:linear-gradient(
+    border-radius:15px;
+
+
+    background:
+
+    linear-gradient(
+
         135deg,
+
         #7b2cff,
+
         #ff4ecd
+
     );
 
 
@@ -121,6 +166,7 @@
 
 
     font-size:18px;
+
 
     font-weight:bold;
 
@@ -131,31 +177,42 @@
     z-index:10;
 
 
+    transition:0.3s;
+
+
 }
 
 
 
 .game-button:hover {
 
+
     transform:scale(1.05);
 
+
+    filter:brightness(1.2);
+
+
 }
+
+
+
 /* ========================= */
-/* MOBILE ADAPTATION */
+/* MOBILE */
 /* ========================= */
 
-@media (max-width: 600px) {
+
+@media(max-width:600px){
+
 
 
     .screen {
+
 
         width:100%;
 
         height:100dvh;
 
-        overflow:hidden;
-
-        position:relative;
 
     }
 
@@ -163,84 +220,48 @@
 
     #background {
 
-        position:absolute;
-
-        top:0;
-
-        left:0;
-
-        width:100%;
-
-        height:100%;
-
-
-        background-size:cover;
 
         background-position:center;
 
+
     }
+
 
 
 
     #dialogue {
 
 
-        position:absolute;
-
-
         left:5%;
+
+        right:5%;
+
 
         bottom:80px;
 
 
-        transform:none;
+        min-height:100px;
 
 
-        width:90%;
-
-
-        min-height:110px;
-
-
-        padding:18px;
-
-
-        box-sizing:border-box;
-
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-
-        background:rgba(0,0,0,0.75);
-
-
-        border-radius:18px;
+        padding:15px;
 
 
         font-size:17px;
 
 
-        text-align:center;
-
-
-        z-index:5;
+        border-radius:15px;
 
 
     }
 
 
 
+
     .game-button {
 
 
-        position:absolute;
-
-
         right:20px;
+
 
         bottom:20px;
 
@@ -254,11 +275,7 @@
         font-size:16px;
 
 
-        z-index:10;
-
-
     }
 
 
-}
 }

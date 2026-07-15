@@ -1,126 +1,187 @@
 const scenes = {
 
-    scene1: {
+scene1: {
 
-        steps: [
-
-
-            {
-                background:
-                "assets/backgrounds/scene1.jpg",
-
-                text:
-                "Світло міста розчинялося у нічному небі.\n\nСаме сьогодні починається твоя нова історія..."
-            },
+steps: [
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_2.jpg",
+{
+background:"assets/backgrounds/scene1.jpg",
 
-                text:
-                "Перед очима відкривається величезний футуристичний мегаполіс.\n\nВисокі хмарочоси здіймаються далеко вгору, гублячись серед хмар і світла."
-            },
-
-
-            {
-                background:
-                "assets/backgrounds/scene1_3.jpg",
-
-                text:
-                "На будівлях сяють величезні голографічні екрани.\n\nДесь далеко грає музика.\n\nМісто живе своїм життям."
-            },
+text:
+"Світло міста повільно розчинялося у нічному небі.\n\nСаме сьогодні починається твоя нова історія..."
+},
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_4.jpg",
 
-                text:
-                "Вулицями рухаються сотні людей.\n\nХтось поспішає на роботу.\n\nХтось розмовляє.\n\nХтось просто насолоджується моментом."
-            },
+{
+background:"assets/backgrounds/scene1.jpg",
 
-
-            {
-                background:
-                "assets/backgrounds/scene1_5.jpg",
-
-                name:
-                "Єва",
-
-                text:
-                "Де я?.."
-            },
+text:
+"Екран повільно з'являється з темряви.\n\nПеред очима відкривається величезний мегаполіс майбутнього."
+},
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_6.jpg",
 
-                name:
-                "Єва",
+{
+background:"assets/backgrounds/scene1_2.jpg",
 
-                text:
-                "Я не пам'ятаю, як сюди потрапила..."
-            },
+text:
+"Високі хмарочоси здіймаються далеко вгору, гублячись серед хмар і світла.\n\nЗдається, цьому місту немає кінця."
+},
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_7.jpg",
 
-                name:
-                "Єва",
+{
+background:"assets/backgrounds/scene1_3.jpg",
 
-                text:
-                "Дивно...\n\nТаке відчуття, ніби мене тут ніхто не помічає."
-            },
+text:
+"На будівлях сяють величезні голографічні екрани.\n\nДесь грає музика.\n\nМісто живе власним життям."
+},
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_5.jpg",
 
-                text:
-                "На величезному голографічному екрані виступає відома співачка перед багатотисячною аудиторією.\n\nЇї голос лунає на все місто."
-            },
+{
+background:"assets/backgrounds/scene1_4.jpg",
 
-
-            {
-                background:
-                "assets/backgrounds/scene1_6.jpg",
-
-                name:
-                "Єва",
-
-                text:
-                "Скільки людей її слухає...\n\nНапевно, це приємно — коли тебе знають."
-            },
+text:
+"Повітряні машини безшумно пролітають між будівлями.\n\nВулицями рухаються сотні людей."
+},
 
 
-            {
-                background:
-                "assets/backgrounds/scene1_7.jpg",
 
-                text:
-                "Люди продовжують рухатися вперед.\n\nКожен кудись іде.\n\nНаче всі знають, чого хочуть від життя."
-            },
+{
+background:"assets/backgrounds/scene1_4.jpg",
 
+name:"Єва",
 
-            {
-                background:
-                "assets/backgrounds/scene1_7.jpg",
-
-                name:
-                "Єва",
-
-                text:
-                "Чому мені здається, що я тут чужа?.."
-            }
+text:
+"Де я?.."
+},
 
 
-        ]
 
-    }
+{
+background:"assets/backgrounds/scene1_4.jpg",
+
+name:"Єва",
+
+text:
+"Я не пам'ятаю, як сюди потрапила..."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_5.jpg",
+
+text:
+"Люди проходять поруч.\n\nХтось розмовляє.\n\nХтось сміється.\n\nХтось дивиться у телефон."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_5.jpg",
+
+text:
+"Але ніхто не звертає уваги.\n\nНаче тебе тут немає."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_5.jpg",
+
+name:"Єва",
+
+text:
+"Дивно..."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_5.jpg",
+
+name:"Єва",
+
+text:
+"Таке відчуття, ніби мене ніхто не помічає."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_6.jpg",
+
+text:
+"Твій погляд піднімається до величезного голографічного екрану."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_6.jpg",
+
+text:
+"На ньому виступає відома співачка перед багатотисячною аудиторією.\n\nЇї голос чує все місто."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_6.jpg",
+
+name:"Єва",
+
+text:
+"Скільки людей її слухає..."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_6.jpg",
+
+name:"Єва",
+
+text:
+"Напевно, це приємно, коли тебе знають."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_7.jpg",
+
+text:
+"Через кілька секунд ти відводиш погляд від екрана.\n\nМісто продовжує жити."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_7.jpg",
+
+text:
+"Кожен кудись іде.\n\nКожен має свою мету.\n\nНаче всі знають, чого хочуть від життя."
+},
+
+
+
+{
+background:"assets/backgrounds/scene1_7.jpg",
+
+name:"Єва",
+
+text:
+"Чому мені здається, що я тут чужа?.."
+}
+
+
+]
+
+}
 
 };

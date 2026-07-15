@@ -650,3 +650,115 @@ translateY(0);
 
 
 }
+/* =========================
+   CAMERA MOVEMENT
+========================= */
+
+
+@keyframes cameraMove {
+
+
+from {
+
+
+    transform:scale(1);
+
+
+}
+
+
+to {
+
+
+    transform:scale(1.08);
+
+
+}
+
+
+
+}
+
+
+
+.camera-close {
+
+
+animation:
+
+cameraClose 12s ease infinite alternate;
+
+
+}
+
+
+
+.camera-far {
+
+
+animation:
+
+cameraFar 12s ease infinite alternate;
+
+
+}
+
+
+
+@keyframes cameraClose {
+
+
+from {
+
+
+transform:
+
+scale(1);
+
+
+}
+
+
+to {
+
+
+transform:
+
+scale(1.12);
+
+
+}
+
+
+
+}
+
+
+
+@keyframes cameraFar {
+
+
+from {
+
+
+transform:
+
+scale(1.08);
+
+
+}
+
+
+to {
+
+
+transform:
+
+scale(1);
+
+
+}
+
+
+
+}

@@ -120,12 +120,32 @@ function showStep(){
 
 
 
-    document
-    .getElementById("background")
-    .style.backgroundImage =
+   const bg =
+document.getElementById("background");
+
+
+
+bg.classList.add("background-hide");
+
+
+
+setTimeout(()=>{
+
+
+    bg.style.backgroundImage =
 
     `url("${step.background}")`;
 
+
+
+    bg.classList.remove("background-hide");
+
+
+    bg.classList.add("background-show");
+
+
+
+},400);
 
 
     typeText(step.text);

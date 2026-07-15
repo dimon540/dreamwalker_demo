@@ -8,10 +8,12 @@ function startScene(sceneName){
 const scene = scenes[sceneName];
 
 
-
 if(!scene){
 
-console.error("Сцена не знайдена:",sceneName);
+console.error(
+"Сцена не знайдена:",
+sceneName
+);
 
 return;
 
@@ -19,7 +21,7 @@ return;
 
 
 
-app.innerHTML=`
+app.innerHTML = `
 
 
 <div class="screen">
@@ -28,9 +30,12 @@ app.innerHTML=`
 <div id="background"></div>
 
 
+
 <div id="dialogue">
 
+
 ${scene.text}
+
 
 </div>
 
@@ -43,7 +48,9 @@ ${scene.text}
 </button>
 
 
+
 </div>
+
 
 
 `;
@@ -51,7 +58,8 @@ ${scene.text}
 
 
 document.getElementById("background").style.backgroundImage =
-`url('${scene.background}')`;
+
+`url("${scene.background}")`;
 
 
 

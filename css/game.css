@@ -1,63 +1,88 @@
-/* ========================= */
-/* DREAMWALKER GAME SCREEN */
-/* ========================= */
+/* =========================
+   DREAMWALKER GAME SCREEN
+========================= */
 
 
 .screen {
 
-    width:100vw;
-
+    width:100%;
     height:100vh;
-
-    height:100dvh;
-
 
     position:relative;
 
     overflow:hidden;
 
-    background:#000;
+    background:black;
+
+    animation:sceneFade 1.2s ease;
 
 }
 
 
 
-/* ========================= */
-/* BACKGROUND */
-/* ========================= */
-
+/* ФОН СЦЕНИ */
 
 #background {
 
     position:absolute;
 
+    width:100%;
+
+    height:100%;
 
     top:0;
 
     left:0;
 
 
-    width:100%;
-
-    height:100%;
-
-
     background-size:cover;
 
     background-position:center;
 
-    background-repeat:no-repeat;
 
-
-    z-index:1;
+    animation:backgroundAppear 1.5s ease;
 
 }
 
 
 
-/* ========================= */
-/* DIALOGUE BOX */
-/* ========================= */
+/* затемнення для читабельності */
+
+.screen::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:45%;
+
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,0.75)
+
+    );
+
+
+    pointer-events:none;
+
+}
+
+
+
+/* =========================
+   ДІАЛОГОВЕ ВІКНО
+========================= */
 
 
 #dialogue {
@@ -66,63 +91,74 @@
     position:absolute;
 
 
-    left:5%;
-
-    right:5%;
-
+    left:50%;
 
     bottom:90px;
+
+
+    transform:translateX(-50%);
+
+
+
+    width:85%;
 
 
     min-height:120px;
 
 
+
     padding:25px;
+
 
 
     box-sizing:border-box;
 
 
-    display:flex;
 
-    align-items:center;
+    background:
 
-    justify-content:center;
+    rgba(10,10,25,0.75);
 
 
-    background:rgba(0,0,0,0.75);
+
+    backdrop-filter:blur(12px);
+
 
 
     border:
 
-    2px solid rgba(255,255,255,0.35);
+    1px solid rgba(255,255,255,0.25);
+
 
 
     border-radius:20px;
 
 
+
     color:white;
 
 
-    font-size:24px;
+    font-size:20px;
 
 
     line-height:1.5;
 
 
-    text-align:center;
-
-
     z-index:5;
+
+
+
+    animation:dialogueAppear 0.6s ease;
+
 
 
 }
 
 
 
-/* ========================= */
-/* NEXT BUTTON */
-/* ========================= */
+/* =========================
+   КНОПКА ДАЛІ
+========================= */
 
 
 .game-button {
@@ -133,51 +169,52 @@
 
     right:30px;
 
-
     bottom:25px;
 
 
-    width:200px;
 
+    width:130px;
 
-    height:55px;
+    height:45px;
 
-
-    border:none;
 
 
     border-radius:15px;
 
 
+    border:
+
+    1px solid rgba(255,255,255,0.5);
+
+
+
     background:
 
-    linear-gradient(
+    rgba(255,255,255,0.15);
 
-        135deg,
 
-        #7b2cff,
 
-        #ff4ecd
+    backdrop-filter:blur(10px);
 
-    );
 
 
     color:white;
 
 
-    font-size:18px;
+    font-size:17px;
 
-
-    font-weight:bold;
 
 
     cursor:pointer;
 
 
+
     z-index:10;
 
 
+
     transition:0.3s;
+
 
 
 }
@@ -187,137 +224,152 @@
 .game-button:hover {
 
 
+    background:white;
+
+
+    color:black;
+
+
     transform:scale(1.05);
-
-
-    filter:brightness(1.2);
 
 
 }
 
 
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+/* =========================
+   АНІМАЦІЇ
+========================= */
+
+
+@keyframes sceneFade {
+
+
+from {
+
+opacity:0;
+
+}
+
+to {
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+@keyframes backgroundAppear {
+
+
+from {
+
+opacity:0;
+
+transform:scale(1.05);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+@keyframes dialogueAppear {
+
+
+from {
+
+
+opacity:0;
+
+transform:
+
+translateX(-50%)
+
+translateY(30px);
+
+
+}
+
+
+to {
+
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+
+translateY(0);
+
+
+}
+
+
+
+}
+
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
 
 
 @media(max-width:600px){
 
 
-
-    .screen {
-
-
-        width:100%;
-
-        height:100dvh;
+#dialogue {
 
 
-    }
+    width:92%;
 
 
-
-    #background {
-
-
-        background-position:center;
+    bottom:80px;
 
 
-    }
+    min-height:110px;
+
+
+    padding:18px;
 
 
 
+    font-size:17px;
 
-    #dialogue {
-
-
-        left:5%;
-
-        right:5%;
-
-
-        bottom:80px;
-
-
-        min-height:100px;
-
-
-        padding:15px;
-
-
-        font-size:17px;
-
-
-        border-radius:15px;
-
-
-    }
-
-
-
-
-    .game-button {
-
-
-        right:20px;
-
-
-        bottom:20px;
-
-
-        width:130px;
-
-
-        height:45px;
-
-
-        font-size:16px;
-
-
-    }
 
 
 }
-@media (max-width:600px){
-
-    #dialogue {
-
-        position:absolute !important;
-
-        left:5% !important;
-
-        right:5% !important;
-
-        bottom:90px !important;
-
-        width:auto !important;
-
-        min-height:100px !important;
-
-        padding:15px !important;
-
-        box-sizing:border-box !important;
-
-        background:rgba(0,0,0,0.75) !important;
-
-        color:white !important;
-
-        font-size:16px !important;
-
-        border-radius:15px !important;
-
-        overflow-wrap:break-word;
-
-    }
 
 
-    .game-button {
 
-        right:20px !important;
+.game-button {
 
-        bottom:20px !important;
 
-    }
+    right:20px;
+
+    bottom:20px;
+
+
+    width:110px;
+
+
+}
+
+
 
 }

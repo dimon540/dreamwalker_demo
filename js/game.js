@@ -94,18 +94,17 @@ function showStep(){
         <div id="dialogue-box">
 
 
-            ${
-                step.name
-                ?
-                `
-                <div class="speaker">
-                    ${step.name}
-                </div>
-                `
-                :
-                ""
-            }
-
+          ${
+    step.name === true
+    ?
+    `
+    <div class="speaker">
+        ${player.name}
+    </div>
+    `
+    :
+    ""
+}
 
 
             <div id="dialogue"></div>

@@ -206,8 +206,25 @@ function showStep(){
 
 
 
+    if(currentStep === 0){
+
+
+    setTimeout(()=>{
+
+        typeText(step.text);
+
+    },1800);
+
+
+}
+
+else{
+
+
     typeText(step.text);
 
+
+}
 
 
 }

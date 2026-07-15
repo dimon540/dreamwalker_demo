@@ -132,10 +132,33 @@ bg.classList.add("background-hide");
 setTimeout(()=>{
 
 
-    bg.style.backgroundImage =
+    bg.classList.remove(
+"camera-close",
+"camera-far"
+);
 
-    `url("${step.background}")`;
 
+
+if(step.camera === "close"){
+
+
+    bg.classList.add(
+    "camera-close"
+    );
+
+
+}
+
+
+if(step.camera === "far"){
+
+
+    bg.classList.add(
+    "camera-far"
+    );
+
+
+}
 
 
     bg.classList.remove("background-hide");

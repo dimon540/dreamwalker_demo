@@ -1,75 +1,58 @@
-// =========================
-// GAME ENGINE
-// =========================
-
 console.log("Двигун гри запущено.");
 
 
-// запуск сцени
 
-function startScene(sceneName) {
-
-
-    const scene = scenes[sceneName];
+function startScene(sceneName){
 
 
-    if (!scene) {
-
-        console.error("Сцена не знайдена:", sceneName);
-
-        return;
-
-    }
+const scene = scenes[sceneName];
 
 
 
-    app.innerHTML = `
+if(!scene){
 
-    <div class="screen">
+console.error("Сцена не знайдена:",sceneName);
 
-
-        <div id="background"></div>
-
-
-        <div id="dialogue">
-
-            ${scene.text}
-
-        </div>
-
-
-
-        <button class="game-button" onclick="nextScene('${scene.next}')">
-
-            Далі
-
-        </button>
-
-
-    </div>
-
-
-    `;
-
-
-
-    document.getElementById("background").style.backgroundImage =
-    `url('${scene.background}')`;
+return;
 
 }
 
 
 
-// наступна сцена
-
-function nextScene(sceneName) {
+app.innerHTML=`
 
 
-    if(sceneName){
+<div class="screen">
 
-        startScene(sceneName);
 
-    }
+<div id="background"></div>
+
+
+<div id="dialogue">
+
+${scene.text}
+
+</div>
+
+
+
+<button class="game-button" onclick="showMenu()">
+
+Далі
+
+</button>
+
+
+</div>
+
+
+`;
+
+
+
+document.getElementById("background").style.backgroundImage =
+`url('${scene.background}')`;
+
 
 
 }

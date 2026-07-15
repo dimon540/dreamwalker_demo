@@ -762,3 +762,43 @@ scale(1);
 
 
 }
+/* =========================
+   INTRO FADE
+========================= */
+
+
+.screen-intro {
+
+
+    animation:
+
+    introFade 2.5s ease;
+
+
+}
+
+
+
+@keyframes introFade {
+
+
+    from {
+
+
+        opacity:0;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+    }
+
+
+}

@@ -1,3 +1,7 @@
+// =========================
+// GAME ENGINE
+// =========================
+
 console.log("Двигун гри запущено.");
 
 
@@ -10,6 +14,10 @@ let typing = false;
 let typingTimer;
 
 
+
+// =========================
+// ЗАПУСК СЦЕНИ
+// =========================
 
 function startScene(sceneName){
 
@@ -42,6 +50,10 @@ function startScene(sceneName){
 
 
 
+// =========================
+// ПОКАЗ КАДРУ
+// =========================
+
 function showStep(){
 
 
@@ -49,7 +61,7 @@ function showStep(){
 
 
 
-    const step =
+    const step = 
     currentScene.steps[currentStep];
 
 
@@ -68,13 +80,15 @@ function showStep(){
 
 
             ${
-            step.name
-            ?
-            `<div class="speaker">
-            ${step.name}
-            </div>`
-            :
-            ""
+                step.name
+                ?
+                `
+                <div class="speaker">
+                    ${step.name}
+                </div>
+                `
+                :
+                ""
             }
 
 
@@ -89,9 +103,11 @@ function showStep(){
 
 
 
-        <button class="game-button" onclick="nextStep()">
+        <button 
+        class="game-button" 
+        onclick="nextStep()">
 
-        Далі
+            Далі
 
         </button>
 
@@ -121,6 +137,10 @@ function showStep(){
 
 
 
+// =========================
+// ДРУК ТЕКСТУ
+// =========================
+
 function typeText(text){
 
 
@@ -128,17 +148,19 @@ function typeText(text){
     document.getElementById("dialogue");
 
 
-    box.innerHTML="";
 
-
-    let index=0;
-
-
-    typing=true;
+    box.innerHTML = "";
 
 
 
-    typingTimer=setInterval(()=>{
+    let index = 0;
+
+
+    typing = true;
+
+
+
+    typingTimer = setInterval(()=>{
 
 
         box.innerHTML += text[index];
@@ -148,13 +170,13 @@ function typeText(text){
 
 
 
-        if(index>=text.length){
+        if(index >= text.length){
 
 
             clearInterval(typingTimer);
 
 
-            typing=false;
+            typing = false;
 
 
         }
@@ -170,8 +192,16 @@ function typeText(text){
 
 
 
+// =========================
+// КНОПКА ДАЛІ
+// =========================
+
 function nextStep(){
 
+
+
+    // якщо текст ще друкується
+    // показати його повністю
 
     if(typing){
 
@@ -184,11 +214,11 @@ function nextStep(){
         currentScene.steps[currentStep].text;
 
 
-        typing=false;
+
+        typing = false;
 
 
         return;
-
 
     }
 
@@ -213,6 +243,7 @@ function nextStep(){
 
 
     }
+
 
 
 }

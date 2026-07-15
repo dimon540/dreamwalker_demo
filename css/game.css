@@ -579,3 +579,43 @@ translateY(0);
 
 
 }
+/* =========================
+   SCENE TRANSITIONS
+========================= */
+
+
+#background {
+
+    transition:
+
+    opacity 0.8s ease,
+
+    transform 1.5s ease;
+
+}
+
+
+
+.background-hide {
+
+
+    opacity:0;
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+.background-show {
+
+
+    opacity:1;
+
+
+    transform:scale(1);
+
+
+}

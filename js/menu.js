@@ -45,37 +45,37 @@ Dreamwalker
 <div class="menu-buttons">
 
 
-<button type="button" onclick="newGame()">
+<button onclick="newGame()">
 Нова гра
 </button>
 
 
-<button type="button" onclick="continueGame()">
+<button onclick="continueGame()">
 Продовжити
 </button>
 
 
-<button type="button" onclick="showChapters()">
+<button onclick="showChapters()">
 Розділи
 </button>
 
 
-<button type="button" onclick="showSaves()">
+<button onclick="showSaves()">
 Збереження
 </button>
 
 
-<button type="button" onclick="showSettings()">
+<button onclick="showSettings()">
 Налаштування
 </button>
 
 
-<button type="button" onclick="showGallery()">
+<button onclick="showGallery()">
 Галерея
 </button>
 
 
-<button type="button" onclick="showAbout()">
+<button onclick="showAbout()">
 Про гру
 </button>
 
@@ -99,6 +99,7 @@ function newGame(){
     startScene("scene1");
 
 }
+
 
 
 // =========================
@@ -129,7 +130,6 @@ app.innerHTML = `
 
 
 </div>
-
 
 </div>
 
@@ -163,7 +163,6 @@ app.innerHTML = `
 🌙 Пролог
 </h2>
 
-
 <p>
 Початок історії Dreamwalker
 </p>
@@ -177,7 +176,6 @@ app.innerHTML = `
 </div>
 
 
-
 <div class="chapter-card locked">
 
 <h2>
@@ -189,7 +187,6 @@ app.innerHTML = `
 </p>
 
 </div>
-
 
 
 <button onclick="showMenu()">
@@ -213,7 +210,7 @@ app.innerHTML = `
 
 function showSaves(){
 
-app.innerHTML=`
+app.innerHTML = `
 
 <div class="menu">
 
@@ -235,7 +232,6 @@ app.innerHTML=`
 
 
 </div>
-
 
 </div>
 
@@ -264,28 +260,46 @@ app.innerHTML = `
 <div class="settings-panel">
 
 
-<label id="musicValue">
+<label>
 🎵 Музика: ${settings.music}%
 </label>
 
 
-<input id="music" type="range" min="0" max="100" value="${settings.music}">
+<input 
+type="range"
+min="0"
+max="100"
+value="${settings.music}"
+id="music"
+>
 
 
-<label id="soundValue">
+<label>
 🔊 Звуки: ${settings.sound}%
 </label>
 
 
-<input id="sound" type="range" min="0" max="100" value="${settings.sound}">
+<input 
+type="range"
+min="0"
+max="100"
+value="${settings.sound}"
+id="sound"
+>
 
 
-<label id="textValue">
+<label>
 💬 Швидкість тексту: ${settings.textSpeed}
 </label>
 
 
-<input id="textSpeed" type="range" min="1" max="10" value="${settings.textSpeed}">
+<input 
+type="range"
+min="1"
+max="10"
+value="${settings.textSpeed}"
+id="textSpeed"
+>
 
 
 <button onclick="applySettings()">
@@ -304,32 +318,6 @@ app.innerHTML = `
 </div>
 
 `;
-
-
-
-document.getElementById("music").oninput=function(){
-
-document.getElementById("musicValue").innerHTML =
-"🎵 Музика: "+this.value+"%";
-
-};
-
-
-document.getElementById("sound").oninput=function(){
-
-document.getElementById("soundValue").innerHTML =
-"🔊 Звуки: "+this.value+"%";
-
-};
-
-
-document.getElementById("textSpeed").oninput=function(){
-
-document.getElementById("textValue").innerHTML =
-"💬 Швидкість тексту: "+this.value;
-
-};
-
 
 }
 
@@ -421,7 +409,7 @@ Dreamwalker
 
 
 // =========================
-// ЗАПУСК
+// СТАРТ
 // =========================
 
 showMenu();

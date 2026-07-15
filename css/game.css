@@ -449,3 +449,133 @@ translateY(0);
     z-index:20;
 
 }
+/* =========================
+   NAME BOX
+========================= */
+
+
+.speaker {
+
+
+    position:absolute;
+
+
+    left:35px;
+
+
+    top:-35px;
+
+
+
+    padding:8px 25px;
+
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(120,100,255,0.85),
+
+    rgba(255,100,220,0.85)
+
+    );
+
+
+
+    border-radius:15px 15px 0 0;
+
+
+
+    color:white;
+
+
+
+    font-size:18px;
+
+
+
+    font-weight:bold;
+
+
+
+    letter-spacing:1px;
+
+
+
+    box-shadow:
+
+    0 0 20px rgba(150,120,255,0.5);
+
+
+
+}
+
+
+
+#dialogue-box {
+
+
+    position:absolute;
+
+
+    left:50%;
+
+    bottom:90px;
+
+
+    transform:translateX(-50%);
+
+
+
+    width:85%;
+
+
+
+    min-height:130px;
+
+
+
+    padding:30px;
+
+
+
+    padding-top:40px;
+
+
+
+    box-sizing:border-box;
+
+
+
+    background:
+
+    rgba(10,10,25,0.8);
+
+
+
+    backdrop-filter:blur(15px);
+
+
+
+    border-radius:20px;
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.25);
+
+
+
+    color:white;
+
+
+
+    z-index:5;
+
+
+
+}

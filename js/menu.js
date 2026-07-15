@@ -96,7 +96,9 @@ Dreamwalker
 
 function newGame(){
 
-    startScene("scene1");
+    showNameCreate();
+
+}
 
 }
 

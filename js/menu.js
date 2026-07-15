@@ -90,42 +90,15 @@ Dreamwalker
 
 
 
-
 // =========================
 // НОВА ГРА
 // =========================
 
 function newGame(){
 
-app.innerHTML = `
-
-<div class="menu">
-
-<h1 class="logo">
-Нова гра
-</h1>
-
-
-<div class="menu-buttons">
-
-<p>
-Початок історії Dreamwalker
-</p>
-
-
-<button type="button" onclick="showMenu()">
-← Назад
-</button>
-
-
-</div>
-
-</div>
-
-`;
+    startScene("scene1");
 
 }
-
 
 
 
@@ -158,12 +131,12 @@ app.innerHTML = `
 
 </div>
 
+
 </div>
 
 `;
 
 }
-
 
 
 
@@ -251,25 +224,6 @@ onclick="newGame()">
 
 
 
-
-
-<div class="chapter-card locked">
-
-<h2>
-🔒 Розділ 3
-</h2>
-
-
-<p>
-Недоступно
-</p>
-
-
-</div>
-
-
-
-
 <button 
 type="button"
 onclick="showMenu()">
@@ -288,6 +242,7 @@ onclick="showMenu()">
 `;
 
 }
+
 
 
 
@@ -449,7 +404,7 @@ showMenu();
 
 
 // =========================
-// ІНШІ МЕНЮ
+// ГАЛЕРЕЯ
 // =========================
 
 function showGallery(){
@@ -462,9 +417,11 @@ app.innerHTML = `
 Галерея
 </h1>
 
-<button class="game-button" type="button" onclick="showMenu()">
+
+<button class="game-button" onclick="showMenu()">
 ← Назад
 </button>
+
 
 </div>
 
@@ -473,6 +430,10 @@ app.innerHTML = `
 }
 
 
+
+// =========================
+// ПРО ГРУ
+// =========================
 
 function showAbout(){
 
@@ -491,9 +452,10 @@ Dreamwalker
 </p>
 
 
-<button class="game-button" type="button" onclick="showMenu()">
+<button class="game-button" onclick="showMenu()">
 ← Назад
 </button>
+
 
 </div>
 
@@ -503,5 +465,6 @@ Dreamwalker
 
 
 
+// запуск меню
 
 showMenu();

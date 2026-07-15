@@ -802,3 +802,126 @@ scale(1);
 
 
 }
+/* =========================
+   NAME CREATION
+========================= */
+
+
+.name-screen{
+
+
+    animation:
+
+    introFade 1s ease;
+
+
+}
+
+
+
+.name-panel{
+
+
+    width:80%;
+
+    max-width:400px;
+
+
+    padding:35px;
+
+
+    background:
+
+    rgba(10,10,25,0.8);
+
+
+
+    backdrop-filter:blur(15px);
+
+
+
+    border-radius:25px;
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.25);
+
+
+
+}
+
+
+
+.name-panel p{
+
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.name-input{
+
+
+    width:100%;
+
+
+    box-sizing:border-box;
+
+
+
+    padding:15px;
+
+
+
+    font-size:20px;
+
+
+
+    text-align:center;
+
+
+
+    border-radius:15px;
+
+
+
+    border:none;
+
+
+
+    outline:none;
+
+
+
+    background:
+
+    rgba(255,255,255,0.9);
+
+
+
+    margin-bottom:20px;
+
+
+
+}
+
+
+
+.name-input:focus{
+
+
+    box-shadow:
+
+    0 0 20px rgba(150,120,255,0.8);
+
+
+}

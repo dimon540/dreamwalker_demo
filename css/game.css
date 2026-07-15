@@ -147,20 +147,87 @@
 @media (max-width: 600px) {
 
 
+    .screen {
+
+        width:100%;
+
+        height:100dvh;
+
+        overflow:hidden;
+
+        position:relative;
+
+    }
+
+
+
+    #background {
+
+        position:absolute;
+
+        top:0;
+
+        left:0;
+
+        width:100%;
+
+        height:100%;
+
+
+        background-size:cover;
+
+        background-position:center;
+
+    }
+
+
+
     #dialogue {
+
+
+        position:absolute;
+
+
+        left:5%;
+
+        bottom:80px;
+
+
+        transform:none;
+
 
         width:90%;
 
-        min-height:100px;
 
-        bottom:20px;
-
-        padding:15px;
+        min-height:110px;
 
 
-        font-size:16px;
+        padding:18px;
 
-        border-radius:15px;
+
+        box-sizing:border-box;
+
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+
+        background:rgba(0,0,0,0.75);
+
+
+        border-radius:18px;
+
+
+        font-size:17px;
+
+
+        text-align:center;
+
+
+        z-index:5;
 
 
     }
@@ -170,12 +237,16 @@
     .game-button {
 
 
+        position:absolute;
+
+
         right:20px;
 
-        bottom:10px;
+        bottom:20px;
 
 
         width:130px;
+
 
         height:45px;
 
@@ -183,48 +254,11 @@
         font-size:16px;
 
 
-    }
+        z-index:10;
 
-
-
-    .screen {
-
-        width:100vw;
-
-        height:100dvh;
-
-    }
-
-
-
-    #background {
-
-        width:100%;
-
-        height:100%;
 
     }
 
 
 }
-#dialogue {
-
-    display:block !important;
-
-    position:fixed !important;
-
-    bottom:20px !important;
-
-    left:5% !important;
-
-    width:90% !important;
-
-    min-height:100px !important;
-
-    background:red !important;
-
-    color:white !important;
-
-    z-index:9999 !important;
-
 }

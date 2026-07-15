@@ -44,9 +44,7 @@ function startScene(sceneName){
 
     showStep();
 
-
 }
-
 
 
 
@@ -61,7 +59,7 @@ function showStep(){
 
 
 
-    const step = 
+    const step =
     currentScene.steps[currentStep];
 
 
@@ -120,55 +118,78 @@ function showStep(){
 
 
 
-   const bg =
-document.getElementById("background");
+    const bg =
+    document.getElementById("background");
 
 
 
-bg.classList.add("background-hide");
-
-
-
-setTimeout(()=>{
-
+    // прибираємо старі ефекти
 
     bg.classList.remove(
-"camera-close",
-"camera-far"
-);
-
-
-
-if(step.camera === "close"){
-
-
-    bg.classList.add(
-    "camera-close"
+        "background-hide",
+        "background-show",
+        "camera-close",
+        "camera-far"
     );
 
 
-}
 
-
-if(step.camera === "far"){
-
+    // затемнення перед зміною
 
     bg.classList.add(
-    "camera-far"
+        "background-hide"
     );
 
 
-}
+
+    setTimeout(()=>{
 
 
-    bg.classList.remove("background-hide");
+        bg.style.backgroundImage =
+
+        `url("${step.background}")`;
 
 
-    bg.classList.add("background-show");
+
+        // камера
+
+        if(step.camera === "close"){
+
+
+            bg.classList.add(
+                "camera-close"
+            );
+
+
+        }
 
 
 
-},400);
+        if(step.camera === "far"){
+
+
+            bg.classList.add(
+                "camera-far"
+            );
+
+
+        }
+
+
+
+        bg.classList.remove(
+            "background-hide"
+        );
+
+
+        bg.classList.add(
+            "background-show"
+        );
+
+
+
+    },400);
+
 
 
     typeText(step.text);
@@ -197,6 +218,7 @@ function typeText(text){
 
 
     let index = 0;
+
 
 
     typing = true;
@@ -243,8 +265,8 @@ function nextStep(){
 
 
 
-    // якщо текст ще друкується
-    // показати його повністю
+    // якщо текст друкується
+    // показати одразу весь
 
     if(typing){
 
@@ -262,6 +284,7 @@ function nextStep(){
 
 
         return;
+
 
     }
 
@@ -286,7 +309,6 @@ function nextStep(){
 
 
     }
-
 
 
 }

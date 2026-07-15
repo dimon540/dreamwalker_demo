@@ -5,6 +5,10 @@ let currentScene = null;
 
 let currentStep = 0;
 
+let typing = false;
+
+let typingTimer;
+
 
 
 function startScene(sceneName){
@@ -15,7 +19,10 @@ function startScene(sceneName){
 
     if(!scene){
 
-        console.error("Сцена не знайдена:", sceneName);
+        console.error(
+            "Сцена не знайдена:",
+            sceneName
+        );
 
         return;
 
@@ -35,11 +42,16 @@ function startScene(sceneName){
 
 
 
-
 function showStep(){
 
 
-    const step = currentScene.steps[currentStep];
+    clearInterval(typingTimer);
+
+
+
+    const step =
+    currentScene.steps[currentStep];
+
 
 
     app.innerHTML = `
@@ -52,9 +64,26 @@ function showStep(){
 
 
 
-        <div id="dialogue">
+        <div id="dialogue-box">
 
-            ${step.text}
+
+            ${
+            step.name
+            ?
+            `<div class="speaker">
+            ${step.name}
+            </div>`
+            :
+            ""
+            }
+
+
+
+            <div id="dialogue">
+
+            </div>
+
+
 
         </div>
 
@@ -62,9 +91,10 @@ function showStep(){
 
         <button class="game-button" onclick="nextStep()">
 
-            Далі
+        Далі
 
         </button>
+
 
 
     </div>
@@ -74,9 +104,64 @@ function showStep(){
 
 
 
-    document.getElementById("background").style.backgroundImage =
+    document
+    .getElementById("background")
+    .style.backgroundImage =
 
     `url("${step.background}")`;
+
+
+
+    typeText(step.text);
+
+
+
+}
+
+
+
+
+function typeText(text){
+
+
+    const box =
+    document.getElementById("dialogue");
+
+
+    box.innerHTML="";
+
+
+    let index=0;
+
+
+    typing=true;
+
+
+
+    typingTimer=setInterval(()=>{
+
+
+        box.innerHTML += text[index];
+
+
+        index++;
+
+
+
+        if(index>=text.length){
+
+
+            clearInterval(typingTimer);
+
+
+            typing=false;
+
+
+        }
+
+
+
+    },35);
 
 
 
@@ -88,16 +173,40 @@ function showStep(){
 function nextStep(){
 
 
+    if(typing){
+
+
+        clearInterval(typingTimer);
+
+
+        document.getElementById("dialogue").innerHTML =
+
+        currentScene.steps[currentStep].text;
+
+
+        typing=false;
+
+
+        return;
+
+
+    }
+
+
+
     currentStep++;
+
 
 
     if(currentStep < currentScene.steps.length){
 
+
         showStep();
+
 
     }
 
-    else {
+    else{
 
 
         showMenu();

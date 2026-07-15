@@ -1,13 +1,19 @@
 const scenes = {
 
-    scene1: {
 
-        background: "assets/backgrounds/scene1.jpg",
+scene1:{
 
-        text: "Перед очима відкривається величезне місто.",
 
-        next: null
+background:
+"assets/backgrounds/scene1.jpg",
 
-    }
+
+text:
+"Перед очима відкривається величезне місто. Саме тут починається твоя історія.",
+
+
+}
+
+
 
 };

@@ -470,3 +470,65 @@ Dreamwalker
 // запуск меню
 
 showMenu();
+function showNameCreate(){
+
+
+app.innerHTML = `
+
+
+<div class="menu">
+
+
+<h1 class="logo">
+
+Хто ти?
+
+</h1>
+
+
+
+<div class="menu-buttons">
+
+
+<input 
+id="playerName"
+placeholder="Єва"
+value="${player.name}"
+>
+
+
+
+<button onclick="confirmName()">
+
+Продовжити
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+function confirmName(){
+
+
+let name =
+document.getElementById("playerName").value;
+
+
+setPlayerName(name);
+
+
+startScene("scene1");
+
+
+}

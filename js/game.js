@@ -3,7 +3,7 @@
 // =========================
 
 console.log("Двигун гри запущено.");
-
+let sceneMusic = null;
 
 let currentScene = null;
 

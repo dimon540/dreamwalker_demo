@@ -45,7 +45,7 @@ background:"assets/backgrounds/scene1_2.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Де я?.."
@@ -58,7 +58,7 @@ background:"assets/backgrounds/scene1_2.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Я не пам'ятаю, як сюди потрапила..."
@@ -93,7 +93,7 @@ background:"assets/backgrounds/scene1_3.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Дивно..."
@@ -106,7 +106,7 @@ background:"assets/backgrounds/scene1_3.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Таке відчуття, ніби я тут чужа."
@@ -141,7 +141,7 @@ background:"assets/backgrounds/scene1_4.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Скільки людей її знає..."
@@ -154,7 +154,7 @@ background:"assets/backgrounds/scene1_4.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Напевно, це неймовірне відчуття..."
@@ -167,7 +167,7 @@ background:"assets/backgrounds/scene1_4.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Коли твоє ім'я означає щось для інших."
@@ -213,7 +213,7 @@ background:"assets/backgrounds/scene1_6.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Вона здається безкінечною..."
@@ -226,7 +226,7 @@ background:"assets/backgrounds/scene1_6.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Цікаво...\n\nЧи є межа тому, наскільки високо можна піднятися?"
@@ -250,7 +250,7 @@ background:"assets/backgrounds/scene1_7.jpg",
 
 camera:"close",
 
-name:"Єва",
+name:true,
 
 text:
 "Чому мені здається, що я тут чужа?.."

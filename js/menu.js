@@ -413,3 +413,19 @@ Dreamwalker
 // =========================
 
 showMenu();
+.menu-buttons,
+.menu-buttons button {
+
+    position:relative;
+    z-index:9999;
+    pointer-events:auto;
+
+}
+
+
+button {
+
+    pointer-events:auto !important;
+    cursor:pointer;
+
+}
